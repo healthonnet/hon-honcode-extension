@@ -25,9 +25,6 @@
     "casper": true,
     "tldjs": true,
     "hon_listHON": true,
-    "CircularProgress": true,
-    "__utils__": true,
-    "readabilityCallback": true,
-    "trustabilityCallback": true
+    "__utils__": true
   }
 }
