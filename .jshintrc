@@ -20,7 +20,7 @@
     "$": true,
     "jQuery": true,
     "chrome": true,
-    "kconnect": true,
+    "honcode": true,
     "crypto": true,
     "casper": true,
     "tldjs": true,
