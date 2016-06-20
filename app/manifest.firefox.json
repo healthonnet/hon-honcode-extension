@@ -1,10 +1,9 @@
 {
 
-  "description": "Add kconnect informations into google search results",
+  "description": "Add honCode informations on Search Engines results",
   "manifest_version": 2,
-  "name": "hon-kconnect-firefox-extension",
+  "name": "hon-honcode-extension",
   "version": "1.0",
-  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/borderify",
   "default_locale":"en",
   "icons": {
     "48": "images/icons/icon-48.png"
@@ -12,7 +11,7 @@
 
   "applications": {
     "gecko": {
-      "id": "kconnect_extension@healthonnet.org",
+      "id": "honcode_extension@healthonnet.org",
       "strict_min_version": "46.0.0"
     }
   },
@@ -88,11 +87,7 @@
   ],
 
   "web_accessible_resources": [
-    "styles/main.css",
-    "styles/popup.css",
-    "images/difficult.png",
-    "images/average.png",
-    "images/easy.png"
+    "styles/main.css"
   ]
 
 }
