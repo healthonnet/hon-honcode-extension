@@ -24,7 +24,7 @@
   padding: 0;
   z-index: 9999;
   vertical-align: middle;
-  width: 270px;
+  width: 290px;
 
   background-color: white;
   box-shadow: 4px 4px 4px rgba(160, 160, 160, 0.7);
@@ -49,47 +49,38 @@
     vertical-align: top;
   }
 
-  .readability {
-    .rdb {
-      position: relative;
-      background-size: cover;
-      width:30px;
-      height:30px;
-      display: inline-block;
-      margin: 10px 5px 5px 10px;
+  .principles {
+    width: 150px;
+    ul {
+      padding: 10px 0;
+      margin-left: 10px;
+      list-style: none;
 
-      &.easy {
-        background-image: url('chrome-extension://__MSG_@@extension_id__/images/easy.png');
-      }
-      &.average {
-        background-image: url('chrome-extension://__MSG_@@extension_id__/images/average.png');
-      }
-      &.difficult {
-        background-image: url('chrome-extension://__MSG_@@extension_id__/images/difficult.png');
+      li {
+        &:before {
+          content: "✓";
+          color: limegreen;
+          margin-right: 10px;
+          font-size: 1.1em;
+        }
       }
     }
-
-    p.desc {
-      line-height: 1.308em;
-      width: 100px;
-      margin-top: 10px;
-      display: inline-block;
-      vertical-align: top;
-    }
+    border-left: 1px solid #e4e4e4;
   }
 
   .trustability {
     width: 120px;
+    padding: 0 10px;
 
     .honTrust {
       background-image: url('chrome-extension://__MSG_@@extension_id__/images/honcode/hon-valid-large.png');
       position: relative;
       background-size: cover;
       display: inline-block;
-      width: 36px;
-      height: 45px;
-      margin-left: 40px;
-      margin-top: 5px;
+      height: 100px;
+      width: 80px;
+      margin-left: 25px;
+      margin-top: 10px;
     }
 
     .circle {
@@ -107,11 +98,12 @@
   .honPopup-header {
     position: absolute;
     top: 0;
-    width: 250px;
+    width: 270px;
     background: url("chrome-extension://__MSG_@@extension_id__/images/icon-16.png") top left no-repeat;
     margin: 0;
     text-align: right;
     color: #A5A4A4;
+    background-color: white;
     border-bottom: 1px solid #e4e4e4;
     font-size: 11px;
     padding: 5px;

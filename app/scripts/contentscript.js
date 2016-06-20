@@ -9,12 +9,12 @@ var requestHonCode = function(event, link) {
     'id="' + layerId + '">' +
     '<div class="honPopup-header">' + domain + '</div>' +
     '<div class="k-infos trustability">' +
-    '<h4>HON Certificate</h4>' +
+    '<h4>Show Certificate</h4>' +
     '<div class="hon trb">' +
     '<a target="_blank" ' +
     'class="honTrust">' +
     '</a></div></div>' +
-    '<div class="k-infos trustability">' +
+    '<div class="k-infos principles">' +
     '<h4>Hon Principles</h4><ul>' +
     '<li>Authority</li>' +
     '<li>Complementarity</li>' +
