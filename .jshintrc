@@ -1,0 +1,33 @@
+{
+  "node": true,
+  "browser": true,
+  "mocha": true,
+  "esnext": true,
+  "module": true,
+  "bitwise": true,
+  "curly": true,
+  "eqeqeq": true,
+  "immed": true,
+  "indent": 2,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "quotmark": "single",
+  "undef": true,
+  "unused": true,
+  "strict": true,
+  "globals" : {
+    "$": true,
+    "jQuery": true,
+    "chrome": true,
+    "kconnect": true,
+    "crypto": true,
+    "casper": true,
+    "tldjs": true,
+    "hon_listHON": true,
+    "CircularProgress": true,
+    "__utils__": true,
+    "readabilityCallback": true,
+    "trustabilityCallback": true
+  }
+}

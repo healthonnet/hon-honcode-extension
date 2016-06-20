@@ -1,0 +1,98 @@
+{
+
+  "description": "Add kconnect informations into google search results",
+  "manifest_version": 2,
+  "name": "hon-kconnect-firefox-extension",
+  "version": "1.0",
+  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/borderify",
+  "default_locale":"en",
+  "icons": {
+    "48": "images/icons/icon-48.png"
+  },
+
+  "applications": {
+    "gecko": {
+      "id": "kconnect_extension@healthonnet.org",
+      "strict_min_version": "46.0.0"
+    }
+  },
+
+  "background": {
+    "scripts": [
+      "scripts/utils/md5.js",
+      "scripts/utils/hash.js",
+      "scripts/utils/listHON.js",
+      "scripts/background.js"
+    ]
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.google.com/*",
+        "https://*.google.ch/*",
+        "https://*.google.fr/*",
+        "https://*.google.co.uk/*",
+        "https://*.google.it/*",
+        "https://*.google.bg/*",
+        "https://*.google.cz/*",
+        "https://*.google.dk/*",
+        "https://*.google.gr/*",
+        "https://*.google.ee/*",
+        "https://*.google.es/*",
+        "https://*.google.hr/*",
+        "https://*.google.lv/*",
+        "https://*.google.lt/*",
+        "https://*.google.hu/*",
+        "https://*.google.com.mt/*",
+        "https://*.google.nl/*",
+        "https://*.google.pl/*",
+        "https://*.google.pt/*",
+        "https://*.google.ro/*",
+        "https://*.google.si/*",
+        "https://*.google.sk/*",
+        "https://*.google.se/*",
+        "https://*.bing.com/*",
+        "http://*.bing.com/*",
+        "https://*.search.yahoo.com/*"
+      ],
+      "js": [
+        "bower_components/jquery/dist/jquery.min.js",
+        "scripts/tld.js",
+        "scripts/honcode.js",
+        "scripts/contentscript.js"
+      ],
+      "css": [
+        "styles/main.css"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "browser_action": {
+      "default_icon": {
+        "48": "images/icon-48.png",
+        "128": "images/icon-128.png"
+      },
+      "default_title": "Kconnect",
+      "default_popup": "popup.html"
+    },
+
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "http://*/*",
+    "https://*/*",
+    "storage",
+    "webRequest"
+  ],
+
+  "web_accessible_resources": [
+    "styles/main.css",
+    "styles/popup.css",
+    "images/difficult.png",
+    "images/average.png",
+    "images/easy.png"
+  ]
+
+}

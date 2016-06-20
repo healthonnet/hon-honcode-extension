@@ -1,0 +1,10 @@
+{
+  "name": "hon-honcode-extension",
+  "private": true,
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "normalize-css": "normalize.css#^4.1.1"
+  },
+  "devDependencies": {}
+}

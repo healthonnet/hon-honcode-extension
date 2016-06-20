@@ -1,0 +1,62 @@
+{
+  "name": "__MSG_appName__",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "__MSG_appDescription__",
+  "icons": {
+    "16": "images/icon-16.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "scripts/utils/md5.js",
+      "scripts/utils/hash.js",
+      "scripts/utils/listHON.js",
+      "scripts/background.js"
+    ]
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "<all_urls>",
+    "storage",
+    "webRequest"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "images/icon-invalid-16.png",
+      "48": "images/icon-invalid-48.png",
+      "128": "images/icon-invalid-128.png"
+    },
+    "default_title": "HonCode"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "bower_components/jquery/dist/jquery.min.js",
+        "scripts/utils/md5.js",
+        "scripts/utils/tld.js",
+        "scripts/utils/hash.js",
+        "scripts/utils/listHON.js",
+        "scripts/honcode.js",
+        "scripts/contentscript.js"
+      ],
+      "css":[
+        "styles/main.css"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    "styles/main.css",
+    "images/**"
+  ]
+}

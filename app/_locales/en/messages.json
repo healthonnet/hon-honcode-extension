@@ -1,0 +1,18 @@
+{
+  "appName": {
+    "message": "hon kconnect chrome extension",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Kconnect Extension",
+    "description": "The description of the application"
+  },
+  "tooltipTrustabilityLevel": {
+    "message": "HONcode compliance: %VALUE% %",
+    "description": "The tooltip description of content trustability level"
+  },
+  "tooltipTrustabilityMissingPrinciples": {
+    "message": "Missing Principles: %PRINCIPLES%",
+    "description": "The tooltip description of Trustability missing content"
+  }
+}
