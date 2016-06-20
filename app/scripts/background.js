@@ -26,15 +26,33 @@ function debounce(func, wait, immediate) {
   };
 }
 
+function checkHonCode(url) {
+  hon_listHON.checkURL(hon_listHON.formatHREF(url)).then(function(code) {
+    if (code) {
+      chrome.browserAction.setIcon({path: 'images/icon-48.png'});
+    } else {
+      chrome.browserAction.setIcon({path: 'images/icon-invalid-48.png'});
+    }
+  });
+}
+
 chrome.tabs.onActivated.addListener(function(activeInfo) {
   chrome.tabs.get(activeInfo.tabId, function(tab) {
-    hon_listHON.checkURL(hon_listHON.formatHREF(tab.url)).then(function(code) {
-      if (code) {
-        chrome.browserAction.setIcon({path: 'images/icon-48.png'});
-      } else {
-        chrome.browserAction.setIcon({path: 'images/icon-invalid-48.png'});
-      }
-    });
+    checkHonCode(tab.url);
+  });
+});
+
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+  checkHonCode(tab.url);
+});
+
+chrome.browserAction.onClicked.addListener(function (tab) {
+  hon_listHON.checkURL(hon_listHON.formatHREF(tab.url)).then(function(code) {
+    if (code){
+      var action_url = 'https://www.hon.ch/HONcode/Conduct.html?' +
+        code;
+      chrome.tabs.create({ url: action_url });
+    }
   });
 });
 
