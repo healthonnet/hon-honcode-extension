@@ -8,19 +8,19 @@
     "description": "The description of the application"
   },
   "HonPrinciples":{
-    "message": "Hon Principles",
+    "message": "Principes HON",
     "description": "Hon Principles label"
   },
   "Authority":{
-    "message": "Authority",
+    "message": "Autorité",
     "description": "Authority"
   },
   "Complementarity":{
-    "message": "Complementarity",
+    "message": "Complémentarité",
     "description": "Complementarity"
   },
   "PrivacyPolicy":{
-    "message": "Privacy policy",
+    "message": "Attribution",
     "description": "Privacy policy"
   },
   "Attribution":{
@@ -28,27 +28,27 @@
     "description": "Attribution"
   },
   "Justifiability":{
-    "message": "Justifiability",
+    "message": "Justification",
     "description": "Justifiability"
   },
   "Transparency":{
-    "message": "Transparency",
+    "message": "Professionnalisme",
     "description": "Transparency"
   },
   "FinancialDisclosure":{
-    "message": "Financial disclosure",
+    "message": "Transparence du financement",
     "description": "Financial disclosure"
   },
   "AdvertisingPolicy":{
-    "message": "Advertising policy",
+    "message": "Politique publicitaire",
     "description": "Advertising policy"
   },
   "ShowCertificate":{
-    "message": "Show Certificate",
-    "description": "Show Certificate lmbel"
+    "message": "Voir le Certificat",
+    "description": "Show Certificate label"
   },
   "HonCodeCertified":{
-    "message": "HonCode certified",
+    "message": "certifié HonCode",
     "description": "HonCode certified title"
   },
   "NoHonCodeCertification":{

@@ -12,35 +12,35 @@
     "description": "Hon Principles label"
   },
   "Authority":{
-    "message": "Authority",
+    "message": "Autori",
     "description": "Authority"
   },
   "Complementarity":{
-    "message": "Complementarity",
+    "message": "Complementarietà",
     "description": "Complementarity"
   },
   "PrivacyPolicy":{
-    "message": "Privacy policy",
+    "message": "Privacy",
     "description": "Privacy policy"
   },
   "Attribution":{
-    "message": "Attribution",
+    "message": "Attribuzione",
     "description": "Attribution"
   },
   "Justifiability":{
-    "message": "Justifiability",
+    "message": "Giustificazione",
     "description": "Justifiability"
   },
   "Transparency":{
-    "message": "Transparency",
+    "message": "Trasparenza",
     "description": "Transparency"
   },
   "FinancialDisclosure":{
-    "message": "Financial disclosure",
+    "message": "Finanziamento",
     "description": "Financial disclosure"
   },
   "AdvertisingPolicy":{
-    "message": "Advertising policy",
+    "message": "Pubblicità e politica editoriale",
     "description": "Advertising policy"
   },
   "ShowCertificate":{
