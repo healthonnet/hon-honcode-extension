@@ -125,56 +125,7 @@ chrome.webRequest.onCompleted.addListener(debounce(function(details) {
     '*://*.bing.com/*',
     '*://*.bing.com/*',
     '*://*.search.yahoo.com/*',
-    '*://*.wikipedia.org/*'
+    '*://*.wikipedia.org/*',
   ],
   types: ['xmlhttprequest'],
 });
-
-/* chrome.webRequest.onCompleted.addListener(function(details) {
-  chrome.tabs.executeScript(
-    details.tabId, {
-      file: 'bower_components/jquery/dist/jquery.min.js',
-      allFrames: true,
-    }
-  );
-  chrome.tabs.executeScript(
-    details.tabId, {
-      file: 'scripts/utils/tld.js',
-      allFrames: true,
-    }
-  );
-  chrome.tabs.executeScript(
-    details.tabId, {
-      file: 'scripts/utils/md5.js',
-      allFrames: true,
-    }
-  );
-  chrome.tabs.executeScript(
-    details.tabId, {
-      file: 'scripts/utils/hash.js',
-      allFrames: true,
-    }
-  );
-  chrome.tabs.executeScript(
-    details.tabId, {
-      file: 'scripts/honcode.js',
-      allFrames: true,
-    }
-  );
-  chrome.tabs.executeScript(
-    details.tabId, {
-      file: 'scripts/utils/listHON.js',
-      allFrames: true,
-    }
-  );
-  chrome.tabs.executeScript(details.tabId, {
-    file: 'scripts/wiki_content.js',
-    allFrames: true,
-  });
-}, {
-  urls: [
-    'https://*.wikipedia.org/*'
-  ],
-  types: ['xmlhttprequest'],
-});
-*/
