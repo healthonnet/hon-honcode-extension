@@ -87,6 +87,11 @@ var updateLinks = function() {
   else if (window.location.host.indexOf('wikipedia') > -1) {
     hrefSelector = 'a.external.text';
   }
+  // Match Mediaplus
+  else if (window.location.host.indexOf('nlm') > -1) {
+    hrefSelector = '.reveal';
+  }
+
   var nodeList = document.querySelectorAll(hrefSelector);
   for (var i = 0; i < nodeList.length; ++i) {
     links[i] = nodeList[i].href;
