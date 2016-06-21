@@ -83,6 +83,10 @@ var updateLinks = function() {
   else if (window.location.host.indexOf('bing') > -1) {
     hrefSelector = 'li.b_algo h2>a';
   }
+  // Match Wikipedia
+  else if (window.location.host.indexOf('wikipedia') > -1) {
+    hrefSelector = 'a.external.text';
+  }
   var nodeList = document.querySelectorAll(hrefSelector);
   for (var i = 0; i < nodeList.length; ++i) {
     links[i] = nodeList[i].href;

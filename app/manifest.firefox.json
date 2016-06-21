@@ -25,49 +25,6 @@
     ]
   },
 
-  "content_scripts": [
-    {
-      "matches": [
-        "https://*.google.com/*",
-        "https://*.google.ch/*",
-        "https://*.google.fr/*",
-        "https://*.google.co.uk/*",
-        "https://*.google.it/*",
-        "https://*.google.bg/*",
-        "https://*.google.cz/*",
-        "https://*.google.dk/*",
-        "https://*.google.gr/*",
-        "https://*.google.ee/*",
-        "https://*.google.es/*",
-        "https://*.google.hr/*",
-        "https://*.google.lv/*",
-        "https://*.google.lt/*",
-        "https://*.google.hu/*",
-        "https://*.google.com.mt/*",
-        "https://*.google.nl/*",
-        "https://*.google.pl/*",
-        "https://*.google.pt/*",
-        "https://*.google.ro/*",
-        "https://*.google.si/*",
-        "https://*.google.sk/*",
-        "https://*.google.se/*",
-        "https://*.bing.com/*",
-        "http://*.bing.com/*",
-        "https://*.search.yahoo.com/*"
-      ],
-      "js": [
-        "bower_components/jquery/dist/jquery.min.js",
-        "scripts/tld.js",
-        "scripts/honcode.js",
-        "scripts/contentscript.js"
-      ],
-      "css": [
-        "styles/main.css"
-      ],
-      "run_at": "document_idle",
-      "all_frames": true
-    }
-  ],
   "browser_action": {
       "default_icon": {
         "48": "images/icon-48.png",
