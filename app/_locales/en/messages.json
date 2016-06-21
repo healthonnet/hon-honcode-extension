@@ -14,5 +14,53 @@
   "tooltipTrustabilityMissingPrinciples": {
     "message": "Missing Principles: %PRINCIPLES%",
     "description": "The tooltip description of Trustability missing content"
+  },
+  "HonPrinciples":{
+    "message": "Hon Principles",
+    "description": "Hon Principles label"
+  },
+  "Authority":{
+    "message": "Authority",
+    "description": "Authority"
+  },
+  "Complementarity":{
+    "message": "Complementarity",
+    "description": "Complementarity"
+  },
+  "PrivacyPolicy":{
+    "message": "Privacy policy",
+    "description": "Privacy policy"
+  },
+  "Attribution":{
+    "message": "Attribution",
+    "description": "Attribution"
+  },
+  "Justifiability":{
+    "message": "Justifiability",
+    "description": "Justifiability"
+  },
+  "Transparency":{
+    "message": "Transparency",
+    "description": "Transparency"
+  },
+  "FinancialDisclosure":{
+    "message": "Financial disclosure",
+    "description": "Financial disclosure"
+  },
+  "AdvertisingPolicy":{
+    "message": "Advertising policy",
+    "description": "Advertising policy"
+  },
+  "ShowCertificate":{
+    "message": "Show Certificate",
+    "description": "Show Certificate lmbel"
+  },
+  "HonCodeCertified":{
+    "message": "HonCode certified",
+    "description": "HonCode certified title"
+  },
+  "NoHonCodeCertification":{
+    "message": "No HonCode certification",
+    "description": "No HonCode certification title"
   }
 }

@@ -9,21 +9,21 @@ var requestHonCode = function(event, link) {
     'id="' + layerId + '">' +
     '<div class="honPopup-header">' + domain + '</div>' +
     '<div class="k-infos trustability">' +
-    '<h4>Show Certificate</h4>' +
+    '<h4>' + chrome.i18n.getMessage('ShowCertificate') + '</h4>' +
     '<div class="hon trb">' +
     '<a target="_blank" ' +
     'class="honTrust">' +
     '</a></div></div>' +
     '<div class="k-infos principles">' +
-    '<h4>Hon Principles</h4><ul>' +
-    '<li>Authority</li>' +
-    '<li>Complementarity</li>' +
-    '<li>Privacy policy</li>' +
-    '<li>Attribution</li>' +
-    '<li>Justifiability</li>' +
-    '<li>Transparency</li>' +
-    '<li>Financial disclosure</li>' +
-    '<li>Advertising policy</li>' +
+    '<h4>' + chrome.i18n.getMessage('HonPrinciples') + '</h4><ul>' +
+    '<li>' + chrome.i18n.getMessage('Authority') + '</li>' +
+    '<li>' + chrome.i18n.getMessage('Complementarity') + '</li>' +
+    '<li>' + chrome.i18n.getMessage('PrivacyPolicy') + '</li>' +
+    '<li>' + chrome.i18n.getMessage('Attribution') + '</li>' +
+    '<li>' + chrome.i18n.getMessage('Justifiability') + '</li>' +
+    '<li>' + chrome.i18n.getMessage('Transparency') + '</li>' +
+    '<li>' + chrome.i18n.getMessage('FinancialDisclosure') + '</li>' +
+    '<li>' + chrome.i18n.getMessage('AdvertisingPolicy') + '</li>' +
     '</ul></div>' +
     '</div>';
   $logoId.parent().append(popUp);

@@ -1,19 +1,6 @@
 'use strict';
 
 var honcode = {
-  config: {
-    honCodeCompliance: [
-      'Advertising policy',
-      'Attribution',
-      'Authoritative',
-      'Complementarity',
-      'Date',
-      'Financial disclosure',
-      'Justificability',
-      'Privacy',
-      'Transparency',
-    ],
-  },
   getDomainFromUrl: function(link) {
     var domain = tldjs.getDomain(link);
     var subdomain = tldjs.getSubdomain(link);
@@ -31,10 +18,10 @@ var honcode = {
 
       if (HONcodeCertificateLink === '' ||
         HONcodeCertificateLink === undefined) {
-        target.title = 'No HonCode certification';
+        target.attr('title', chrome.i18n.getMessage('NoHonCodeCertification'));
         target.addClass('invalid');
       } else {
-        target.attr('title', 'HonCode certified');
+        target.attr('title', chrome.i18n.getMessage('HonCodeCertified'));
         target.addClass('valid');
         target.attr('href',
           'http://services.hon.ch/cgi-bin/Plugin/redirect.pl?' +
@@ -42,5 +29,4 @@ var honcode = {
       }
     });
   },
-
 };
