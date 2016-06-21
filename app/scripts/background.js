@@ -46,9 +46,9 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
   checkHonCode(tab.url);
 });
 
-chrome.browserAction.onClicked.addListener(function (tab) {
+chrome.browserAction.onClicked.addListener(function(tab) {
   hon_listHON.checkURL(hon_listHON.formatHREF(tab.url)).then(function(code) {
-    if (code){
+    if (code) {
       var action_url = 'https://www.hon.ch/HONcode/Conduct.html?' +
         code;
       chrome.tabs.create({ url: action_url });

@@ -1,11 +1,13 @@
-var chrome = require('sinon-chrome');
-
-var googleSearch   = 'Verify selectors in ' +
+var googleSearch = 'Verify selectors in ' +
   'Google search results';
-var yahooSearch    = 'Verify selectors in ' +
+var yahooSearch = 'Verify selectors in ' +
   'Yahoo search results';
-var bingSearch     = 'Verify selectors in ' +
+var bingSearch = 'Verify selectors in ' +
   ' Bing search results';
+var wikiPage = 'Verify selectors in ' +
+  ' Wikipedia pages';
+var mediaPage = 'Verify selectors in ' +
+  ' Mediaplus pages';
 
 
 // Google
@@ -21,15 +23,6 @@ casper.test.begin(googleSearch, 3, function suite(test) {
   });
 
   casper.then(function() {
-
-    // Chrome API polyfill
-    this.evaluate(function(chrome) {
-      chrome.i18n.getMessage = function(message) {
-        return message;
-      };
-
-      window.chrome = chrome;
-    }, chrome);
 
     this.page.injectJs('app/bower_components/jquery/dist/jquery.min.js');
     this.page.injectJs('app/scripts/honcode.js');
@@ -61,15 +54,6 @@ casper.test.begin(yahooSearch, 4, function suite(test) {
 
   casper.then(function() {
 
-    // Chrome API polyfill
-    this.evaluate(function(chrome) {
-      chrome.i18n.getMessage = function(message) {
-        return message;
-      };
-
-      window.chrome = chrome;
-    }, chrome);
-
     this.page.injectJs('app/bower_components/jquery/dist/jquery.min.js');
     this.page.injectJs('app/scripts/honcode.js');
     this.page.injectJs('app/scripts/contentscript.js');
@@ -96,15 +80,6 @@ casper.test.begin(bingSearch, 3, function suite(test) {
 
   casper.then(function() {
 
-    // Chrome API polyfill
-    this.evaluate(function(chrome) {
-      chrome.i18n.getMessage = function(message) {
-        return message;
-      };
-
-      window.chrome = chrome;
-    }, chrome);
-
     this.page.injectJs('app/bower_components/jquery/dist/jquery.min.js');
     this.page.injectJs('app/scripts/honcode.js');
     this.page.injectJs('app/scripts/contentscript.js');
@@ -114,6 +89,45 @@ casper.test.begin(bingSearch, 3, function suite(test) {
 
   });
 
+  casper.run(function() {
+    test.done();
+  });
+});
+
+// Wikipedia
+casper.test.begin(wikiPage, 2, function suite(test) {
+
+  casper.start('https://en.wikipedia.org/', function() {
+    test.assertExists('form[action="/w/index.php"]', 'main form is found');
+    this.fill('form[action="/w/index.php"]', {
+      search: 'webmd'
+    }, true);
+    this.waitForSelector('a.external.text');
+  });
+
+  casper.then(function() {
+
+    test.assertTitle('WebMD - Wikipedia, the free encyclopedia',
+      'bing title is ok');
+
+  });
+
+  casper.run(function() {
+    test.done();
+  });
+});
+
+// Mediaplus
+casper.test.begin(mediaPage, 1, function suite(test) {
+
+  casper.start('https://www.nlm.nih.gov/medlineplus/triglycerides.html',
+    function() {
+    this.waitForSelector('a.reveal');
+  });
+  casper.then(function() {
+    test.assertTitle('Triglycerides: MedlinePlus',
+      'bing title is ok');
+  });
   casper.run(function() {
     test.done();
   });
