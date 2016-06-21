@@ -85,7 +85,7 @@ var updateLinks = function() {
   }
   // Match Wikipedia
   else if (window.location.host.indexOf('wikipedia') > -1) {
-    hrefSelector = '.reference-text a, a';
+    hrefSelector = 'a.external.text';
   }
   var nodeList = document.querySelectorAll(hrefSelector);
   for (var i = 0; i < nodeList.length; ++i) {
