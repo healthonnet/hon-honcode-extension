@@ -23,11 +23,6 @@ casper.test.begin(googleSearch, 3, function suite(test) {
   });
 
   casper.then(function() {
-
-    this.page.injectJs('app/bower_components/jquery/dist/jquery.min.js');
-    this.page.injectJs('app/scripts/honcode.js');
-    this.page.injectJs('app/scripts/contentscript.js');
-
     test.assertTitle('vidal - Recherche Google', 'google title is ok');
     test.assertUrlMatch(/q=vidal/, 'search term has been submitted');
   });
@@ -53,11 +48,6 @@ casper.test.begin(yahooSearch, 4, function suite(test) {
   });
 
   casper.then(function() {
-
-    this.page.injectJs('app/bower_components/jquery/dist/jquery.min.js');
-    this.page.injectJs('app/scripts/honcode.js');
-    this.page.injectJs('app/scripts/contentscript.js');
-
     test.assertTitle('vidal - Yahoo Search - Actualités', 'yahoo title is ok');
     test.assertUrlMatch(/p=vidal/, 'search term has been submitted');
   });
@@ -79,14 +69,8 @@ casper.test.begin(bingSearch, 3, function suite(test) {
   });
 
   casper.then(function() {
-
-    this.page.injectJs('app/bower_components/jquery/dist/jquery.min.js');
-    this.page.injectJs('app/scripts/honcode.js');
-    this.page.injectJs('app/scripts/contentscript.js');
-
     test.assertTitle('vidal - Bing', 'bing title is ok');
     test.assertUrlMatch(/q=vidal/, 'search term has been submitted');
-
   });
 
   casper.run(function() {

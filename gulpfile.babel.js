@@ -89,7 +89,6 @@ gulp.task('html', ['styles'], () => {
 gulp.task('chromeManifest', () => {
   return gulp.src('app/manifest.json')
     .pipe($.chromeManifest({
-      buildnumber: true,
       background: {
         target: 'scripts/background.js',
       },
@@ -131,14 +130,14 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('package', function() {
+gulp.task('package', () => {
   var manifest = require('./dist/manifest.json');
   return gulp.src('dist/**')
-      .pipe($.zip('hon kconnect chrome extension-' + manifest.version + '.zip'))
+      .pipe($.zip('hon honcode extension-' + manifest.version + '.zip'))
       .pipe(gulp.dest('package'));
 });
 
-gulp.task('test', function() {
+gulp.task('test', () => {
   runSequence(['lint', 'jscs']);
   gulp.src('test/casper.js')
     .pipe(casperJs({command: 'test --web-security=no'}));
