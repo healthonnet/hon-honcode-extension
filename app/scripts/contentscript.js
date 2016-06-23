@@ -1,5 +1,4 @@
 'use strict';
-
 var requestHonCode = function(event, link) {
   var domain = honcode.getDomainFromUrl(link);
   var layerId = 'layer' + event.target.id;
@@ -26,9 +25,16 @@ var requestHonCode = function(event, link) {
     '<li>' + chrome.i18n.getMessage('AdvertisingPolicy') + '</li>' +
     '</ul></div>' +
     '</div>';
-  $logoId.parent().append(popUp);
+  $('body').append(popUp);
 
   var $layerId =  $('#' + layerId);
+  var borderX = 10;
+  if(event.pageX + 290 > document.body.getBoundingClientRect().right){
+    borderX = event.pageX + 300 - document.body.getBoundingClientRect().right;
+  }
+
+  $layerId.css('left', event.pageX - borderX);
+  $layerId.css('top', event.pageY - 10);
   honcode.contentHONcodeStatus($layerId.find('.honTrust'), link);
 
   var timeoutId;
