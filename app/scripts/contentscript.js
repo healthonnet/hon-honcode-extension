@@ -29,7 +29,7 @@ var requestHonCode = function(event, link) {
 
   var $layerId =  $('#' + layerId);
   var borderX = 10;
-  if(event.pageX + 290 > document.body.getBoundingClientRect().right){
+  if (event.pageX + 290 > document.body.getBoundingClientRect().right) {
     borderX = event.pageX + 300 - document.body.getBoundingClientRect().right;
   }
 
