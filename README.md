@@ -53,7 +53,6 @@ Enable extension on Chrome
 TODO
 ----
 
- - Better Design
  - Extension options
 
 Developers
