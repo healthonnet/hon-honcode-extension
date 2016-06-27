@@ -36,6 +36,18 @@ function checkHonCode(url) {
   });
 }
 
+chrome.omnibox.onInputEntered.addListener(function(text) {
+  var url = 'https://www.hon.ch/HONcode/Search/search.html';
+  if (text) {
+    url += '?siteurl=&cref=http%3A%2F%2Fwww.hon.ch' +
+    '%2FCSE%2FHONCODE%2Fcontextlink.xml&sa=Search&hl=en&cof=FORID%3A11&q=' +
+    encodeURIComponent(text);
+  }
+  chrome.tabs.getSelected(null, function(tab) {
+    chrome.tabs.update(tab.id, {url: url});
+  });
+});
+
 chrome.tabs.onActivated.addListener(function(activeInfo) {
   chrome.tabs.get(activeInfo.tabId, function(tab) {
     checkHonCode(tab.url);
