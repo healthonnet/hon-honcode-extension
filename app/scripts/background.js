@@ -55,7 +55,13 @@ chrome.tabs.onActivated.addListener(function(activeInfo) {
 });
 
 chrome.tabs.onUpdated.addListener(function() {
-  chrome.tabs.query({active: true}, function(tabs) {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    checkHonCode(tabs[0].url);
+  });
+});
+
+chrome.windows.onFocusChanged.addListener(function() {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     checkHonCode(tabs[0].url);
   });
 });
