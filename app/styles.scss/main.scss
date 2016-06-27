@@ -72,7 +72,6 @@
   .trustability {
     width: 120px;
     padding: 0 10px;
-
     .honTrust {
       background-image: url('chrome-extension://__MSG_@@extension_id__/images/honcode/hon-valid-large.png');
       position: relative;
@@ -80,7 +79,7 @@
       display: inline-block;
       height: 100px;
       width: 80px;
-      margin-left: 25px;
+      margin-left: 20px;
       margin-top: 10px;
     }
 
@@ -93,6 +92,9 @@
       canvas {
         margin: 0 30%;
       }
+    }
+    .hon+h4 {
+      margin-top: 0;
     }
   }
 

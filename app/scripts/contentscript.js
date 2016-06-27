@@ -12,7 +12,9 @@ var requestHonCode = function(event, link) {
     '<div class="hon trb">' +
     '<a target="_blank" ' +
     'class="honTrust">' +
-    '</a></div></div>' +
+    '</a></div>' +
+    '<h4>' + chrome.i18n.getMessage('HonCodeCertified') +
+    '</h4></div>' +
     '<div class="k-infos principles">' +
     '<h4>' + chrome.i18n.getMessage('HonPrinciples') + '</h4><ul>' +
     '<li>' + chrome.i18n.getMessage('Authority') + '</li>' +
