@@ -9,6 +9,8 @@ import runSequence from 'run-sequence';
 import {stream as wiredep} from 'wiredep';
 import jscs from 'gulp-jscs';
 import jshint from 'gulp-jshint';
+import download from 'gulp-download';
+import decompress from 'gulp-decompress';
 
 const $ = gulpLoadPlugins();
 
@@ -100,6 +102,13 @@ gulp.task('chromeManifest', () => {
   .pipe(gulp.dest('dist'));
 });
 
+gulp.task('lang', () => {
+  return download('https://localise.biz:443/api/export/archive/json.zip?' +
+    'key=dd5d1fa46f1ba7941659779f6423e38e&format=chrome')
+    .pipe(decompress({strip: 1}))
+    .pipe(gulp.dest('dist'));
+});
+
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 gulp.task('watch', ['lint', 'html'], () => {
@@ -148,7 +157,7 @@ gulp.task('build', (cb) => {
   runSequence(
     ['html', 'images', 'extras'],
     'jscs', 'lint', 'test', 'chromeManifest',
-    'size', cb);
+    'lang', 'size', cb);
 });
 
 gulp.task('default', ['clean'], cb => {

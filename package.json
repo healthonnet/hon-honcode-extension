@@ -45,5 +45,9 @@
     "run-sequence": "^1.1.4",
     "wiredep": "^2.2.2",
     "yargs": "^4.2.0"
+  },
+  "dependencies": {
+    "gulp-decompress": "^2.0.0",
+    "gulp-download": "0.0.1"
   }
 }
