@@ -79,6 +79,7 @@ var updateLinks = function() {
   var links = [];
   var hrefSelector = '';
   var honCodeRequested = 0;
+  var honLogoSize = 'tall';
   // Match Google
   if (window.location.host.indexOf('google') > -1) {
     hrefSelector = 'h3.r>a';
@@ -94,10 +95,12 @@ var updateLinks = function() {
   // Match Wikipedia
   else if (window.location.host.indexOf('wikipedia') > -1) {
     hrefSelector = 'a.external.text';
+    honLogoSize = 'wide';
   }
   // Match Mediaplus
   else if (window.location.host.indexOf('nlm') > -1) {
     hrefSelector = '.reveal';
+    honLogoSize = 'wide';
   }
 
   var nodeList = document.querySelectorAll(hrefSelector);
@@ -110,7 +113,7 @@ var updateLinks = function() {
     var logoId = 'honLogo_' + index;
 
     var honCodeLogo = '<div target=\'_blank\' id="' + logoId +
-      '" class="hon certificateLink"></div>';
+      '" class="hon certificateLink ' + honLogoSize + '"></div>';
 
     if (honLogo.children('.certificateLink').length === 0) {
       // Normalize Search Engine parents' behaviors
