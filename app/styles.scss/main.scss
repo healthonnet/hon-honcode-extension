@@ -2,18 +2,28 @@
   position: relative;
   background-size: cover;
   cursor: pointer;
-  width: 20px;
-  height: 25px;
   margin: 0 5px 0 5px;
   display: none !important;
-  background-image: url("chrome-extension://__MSG_@@extension_id__/images/honcode/hon-none-large.png");
+  // background-image: url("chrome-extension://__MSG_@@extension_id__/images/honcode/hon-none-large.png");
   &.valid {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/images/honcode/hon-valid-large.png');
+    // background-image: url('chrome-extension://__MSG_@@extension_id__/images/honcode/hon-valid-large.png');
     display: inline-block !important;
   }
   &.invalid {
     background-image: url('chrome-extension://__MSG_@@extension_id__/images/honcode/hon-invalid-large.png');
   }
+}
+
+.tall {
+  width: 20px;
+  height: 25px;
+  background-image: url('chrome-extension://__MSG_@@extension_id__/images/honcode/hon-valid-large.png');
+}
+
+.wide {
+  width: 48px;
+  height: 12px;
+  background-image: url('chrome-extension://__MSG_@@extension_id__/images/honcode/hon-medline.png');
 }
 
 .honPopup {

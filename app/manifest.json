@@ -35,6 +35,9 @@
     },
     "default_title": "HonCode"
   },
+  "omnibox": {
+    "keyword": "hon"
+  },
   "content_scripts": [
     {
       "matches": [
