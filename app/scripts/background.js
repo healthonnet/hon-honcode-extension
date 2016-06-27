@@ -43,7 +43,7 @@ chrome.tabs.onActivated.addListener(function(activeInfo) {
 });
 
 chrome.webRequest.onCompleted.addListener(function() {
-  chrome.tabs.query({active: true}, function (tabs){
+  chrome.tabs.query({active: true}, function(tabs) {
     checkHonCode(tabs[0].url);
   });
 },{
