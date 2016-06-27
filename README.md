@@ -48,7 +48,7 @@ Enable extension on Chrome
  - Go to Settings ==> Extensions
  - Enable Developer mode
  - load unpacked extension...
- - select /path/to/extension/app
+ - select /path/to/extension/dist
 
 TODO
 ----
