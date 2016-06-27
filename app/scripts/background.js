@@ -42,13 +42,10 @@ chrome.tabs.onActivated.addListener(function(activeInfo) {
   });
 });
 
-chrome.webRequest.onCompleted.addListener(function() {
+chrome.tabs.onUpdated.addListener(function() {
   chrome.tabs.query({active: true}, function(tabs) {
     checkHonCode(tabs[0].url);
   });
-},{
-  types: ['xmlhttprequest'],
-  urls: ['<all_urls>'],
 });
 
 chrome.browserAction.onClicked.addListener(function(tab) {
