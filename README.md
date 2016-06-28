@@ -43,12 +43,22 @@ $ gulp watch
 ```
 
 Enable extension on Chrome
--------------
+--------------------------
+
+You have to package the extension:
+
+```bash
+$ gulp chrome-prod
+```
+
+Then unzip the extension in package directory.
+
+Finally, from google Chrome:
 
  - Go to Settings ==> Extensions
  - Enable Developer mode
  - load unpacked extension...
- - select /path/to/extension/dist
+ - select /package/hon code extension-VERSION_NUMBER
 
 TODO
 ----
@@ -56,7 +66,7 @@ TODO
  - Extension options
 
 Developers
------------
+----------
 
  - Cedric FROSSARD
  - Pierre REPETTO-ANDIPATIN
