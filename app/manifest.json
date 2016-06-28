@@ -24,9 +24,6 @@
     "storage",
     "webRequest"
   ],
-  "options_ui": {
-    "chrome_style": true
-  },
   "browser_action": {
     "default_icon": {
       "16": "images/icon-invalid-16.png",
