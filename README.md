@@ -60,6 +60,15 @@ Finally, from google Chrome:
  - load unpacked extension...
  - select /package/hon code extension-VERSION_NUMBER
 
+Usage
+-----
+
+There are 3 features:
+
+ - Get HONcode certification in search engines, wikipedia and medline;
+ - See if the current page is HONcode certified;
+ - Type ```hon``` in the omnibox bar in Google Chrome and search among HONcode certified websites.
+
 TODO
 ----
 
