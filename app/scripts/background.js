@@ -324,7 +324,7 @@ chrome.webRequest.onCompleted.addListener(debounce(function(details) {
     '*://*.bing.com/*',
     '*://*.search.yahoo.com/*',
     '*://*.wikipedia.org/*',
-    '*://*.nlm.nih.gov/medlineplus/*'
+    '*://*.nlm.nih.gov/medlineplus/*',
   ],
   types: ['xmlhttprequest'],
 });
