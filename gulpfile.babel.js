@@ -156,10 +156,14 @@ gulp.task('test', () => {
 gulp.task('build', (cb) => {
   runSequence(
     ['html', 'images', 'extras'],
-    'jscs', 'lint', 'test', 'chromeManifest',
+    'chromeManifest',
     'lang', 'size', cb);
 });
 
+gulp.task('chrome-prod', ['clean'], (cb) => {
+  runSequence('build', 'package', cb);
+});
+
 gulp.task('default', ['clean'], cb => {
-  runSequence('build', cb);
+  runSequence('test', 'build', cb);
 });
