@@ -4,20 +4,15 @@
   cursor: pointer;
   margin: 0 5px 0 5px;
   display: none !important;
-  // background-image: url("chrome-extension://__MSG_@@extension_id__/images/honcode/hon-none-large.png");
   &.valid {
-    // background-image: url('chrome-extension://__MSG_@@extension_id__/images/honcode/hon-valid-large.png');
     display: inline-block !important;
-  }
-  &.invalid {
-    background-image: url('chrome-extension://__MSG_@@extension_id__/images/honcode/hon-invalid-large.png');
   }
 }
 
 .tall {
   width: 20px;
   height: 25px;
-  background-image: url('chrome-extension://__MSG_@@extension_id__/images/honcode/hon-valid-large.png');
+  background-image: url('chrome-extension://__MSG_@@extension_id__/images/honcode/hon-logo.png');
 }
 
 .wide {
@@ -87,7 +82,7 @@
     width: 120px;
     padding: 0 10px;
     .honTrust {
-      background-image: url('chrome-extension://__MSG_@@extension_id__/images/honcode/hon-valid-large.png');
+      background-image: url('chrome-extension://__MSG_@@extension_id__/images/honcode/hon-logo.png');
       position: relative;
       background-size: cover;
       display: inline-block;
