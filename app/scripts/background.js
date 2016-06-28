@@ -75,8 +75,9 @@ chrome.windows.onFocusChanged.addListener(function() {
 chrome.browserAction.onClicked.addListener(function(tab) {
   hon_listHON.checkURL(hon_listHON.formatHREF(tab.url)).then(function(code) {
     if (code) {
-      var action_url = 'https://www.hon.ch/HONcode/Conduct.html?' +
-        code;
+      var language   = navigator.language.substring(0,2);
+      var action_url = 'http://services.hon.ch/cgi-bin/Plugin/redirect.pl?' +
+        code + '+' + language;
       chrome.tabs.create({ url: action_url });
     }
   });
