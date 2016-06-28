@@ -30,8 +30,14 @@ function checkHonCode(url) {
   hon_listHON.checkURL(hon_listHON.formatHREF(url)).then(function(code) {
     if (code) {
       chrome.browserAction.setIcon({path: 'images/icon-48.png'});
+      chrome.browserAction.setTitle({
+        title: chrome.i18n.getMessage('iconTooltipValid')
+      });
     } else {
       chrome.browserAction.setIcon({path: 'images/icon-invalid-48.png'});
+      chrome.browserAction.setTitle({
+        title: chrome.i18n.getMessage('iconTooltipInvalid')
+      });
     }
   });
 }
