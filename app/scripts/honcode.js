@@ -16,16 +16,17 @@ var honcode = {
       var HONcodeCertificateLink = code;
       var langue = navigator.language.substring(0,2);
 
-      if (HONcodeCertificateLink === '' ||
-        HONcodeCertificateLink === undefined) {
-        target.attr('title', chrome.i18n.getMessage('NoHonCodeCertification'));
-        target.addClass('invalid');
-      } else {
+      if (HONcodeCertificateLink !== '' &&
+        HONcodeCertificateLink !== undefined) {
+
         target.attr('title', chrome.i18n.getMessage('HonCodeCertified'));
+        target.attr('alt', chrome.i18n.getMessage('HonCodeCertified'));
         target.addClass('valid');
-        target.attr('href',
+        target.attr(
+          'href',
           'http://services.hon.ch/cgi-bin/Plugin/redirect.pl?' +
-          HONcodeCertificateLink + ' +' + langue);
+          HONcodeCertificateLink + '+' + langue
+        );
       }
     });
   },
