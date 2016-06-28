@@ -240,7 +240,7 @@
         "*://*.search.yahoo.com/*",
         "*://*.wikipedia.org/*",
         "*://*.nlm.nih.gov/medlineplus/*"
-    ],
+      ],
       "js": [
         "bower_components/jquery/dist/jquery.min.js",
         "scripts/utils/md5.js",
