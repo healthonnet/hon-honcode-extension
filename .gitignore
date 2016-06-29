@@ -9,3 +9,4 @@ test/bower_components
 package
 
 app/styles
+.DS_Store
