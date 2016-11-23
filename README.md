@@ -2,6 +2,7 @@ HonCode extension
 =================
 
 [![Build Status](https://travis-ci.org/healthonnet/hon-honcode-extension.svg?branch=master)](https://travis-ci.org/healthonnet/hon-honcode-extension)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/d/honcode-toolbar/migljoiadpobjnfkpmbpjekghdiilneb.svg)](https://chrome.google.com/webstore/detail/honcode-toolbar/migljoiadpobjnfkpmbpjekghdiilneb)
 
 Add HonCode informations into google/yahoo/bing 's results
 
