@@ -91,7 +91,7 @@ casper.test.begin(wikiPage, 2, function suite(test) {
 
   casper.then(function() {
 
-    test.assertTitle('WebMD - Wikipedia, the free encyclopedia',
+    test.assertTitle('WebMD - Wikipedia',
       'bing title is ok');
 
   });
