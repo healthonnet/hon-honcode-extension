@@ -86,7 +86,7 @@ var updateLinks = function() {
   }
   // Match Yahoo
   else if (window.location.host.indexOf('yahoo') > -1) {
-    hrefSelector = 'div.compTitle h3.title>a';
+    hrefSelector = '#web div.compTitle h3.title>a';
   }
   // Match Bing
   else if (window.location.host.indexOf('bing') > -1) {
