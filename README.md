@@ -2,7 +2,9 @@ HonCode extension
 =================
 
 [![Build Status](https://travis-ci.org/healthonnet/hon-honcode-extension.svg?branch=master)](https://travis-ci.org/healthonnet/hon-honcode-extension)
+[![GitHub issues](https://img.shields.io/github/issues/healthonnet/hon-honcode-extension.svg)](https://github.com/healthonnet/hon-honcode-extension/issues)
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/d/honcode-toolbar/migljoiadpobjnfkpmbpjekghdiilneb.svg)](https://chrome.google.com/webstore/detail/honcode-toolbar/migljoiadpobjnfkpmbpjekghdiilneb)
+[![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/healthonnet/hon-honcode-extension/master/LICENSE)
 
 Add HonCode informations into google/yahoo/bing 's results
 
