@@ -8,17 +8,17 @@
     display: inline-block !important;
   }
 }
-
+$chromePrefix: "chrome-extension://__MSG_@@extension_id__";
 .tall {
   width: 20px;
   height: 25px;
-  background-image: url('chrome-extension://__MSG_@@extension_id__/images/honcode/hon-logo.png');
+  background-image: url('#{$chromePrefix}/images/honcode/hon-logo.png');
 }
 
 .wide {
   width: 48px;
   height: 12px;
-  background-image: url('chrome-extension://__MSG_@@extension_id__/images/honcode/hon-medline.png');
+  background-image: url('#{$chromePrefix}/images/honcode/hon-medline.png');
 }
 
 .honPopup {
@@ -82,7 +82,7 @@
     width: 120px;
     padding: 0 10px;
     .honTrust {
-      background-image: url('chrome-extension://__MSG_@@extension_id__/images/honcode/hon-logo.png');
+      background-image: url('#{$chromePrefix}/images/honcode/hon-logo.png');
       position: relative;
       background-size: cover;
       display: inline-block;
@@ -112,7 +112,7 @@
     position: absolute;
     top: 0;
     width: 270px;
-    background: url("chrome-extension://__MSG_@@extension_id__/images/icon-48.png") top left no-repeat;
+    background: url('#{$chromePrefix}/images/icon-48.png') top left no-repeat;
     margin: 0;
     text-align: right;
     color: #A5A4A4;
