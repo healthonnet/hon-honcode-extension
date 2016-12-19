@@ -6,7 +6,9 @@
   "version": "2.0.0",
   "default_locale":"en",
   "icons": {
-    "48": "images/icons/icon-48.png"
+    "16": "images/icon-16.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
   },
 
   "applications": {
