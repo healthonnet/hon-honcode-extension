@@ -63,6 +63,19 @@ Finally, from google Chrome:
  - load unpacked extension...
  - select /package/hon code extension-VERSION_NUMBER
 
+Build extension for Firefox
+---------------------------
+
+The extension is compatible with Firefox 48+
+
+In order to build the app for this platform simply add the optional parameter :
+
+```bas
+$ gulp build --firefox
+```
+
+Then check `distFirefox` directory
+
 Usage
 -----
 
