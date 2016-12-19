@@ -62,11 +62,14 @@ gulp.task('images', () => {
       console.log(err);
       this.end();
     })))
-    .pipe(argv.firefox ? gulp.dest('distFirefox/images') : gulp.dest('dist/images'));
+    .pipe(
+      argv.firefox ? gulp.dest('distFirefox/images') : gulp.dest('dist/images')
+    );
 });
 gulp.task('styles', () => {
   const variables = {};
-  variables.chromePrefix = argv.firefox ? '' : 'chrome-extension://__MSG_@@extension_id__';
+  variables.chromePrefix =
+    argv.firefox ? '' : 'chrome-extension://__MSG_@@extension_id__';
   return gulp.src('app/styles.scss/*.scss')
     .pipe($.plumber())
     .pipe($.sassVars(variables))
@@ -94,7 +97,8 @@ gulp.task('html', ['styles'], () => {
 });
 
 gulp.task('chromeManifest', () => {
-  const manifestPath = argv.firefox ? 'app/manifest.firefox.json' : 'app/manifest.json';
+  const manifestPath =
+    argv.firefox ? 'app/manifest.firefox.json' : 'app/manifest.json';
   return gulp.src(manifestPath)
   .pipe($.rename('manifest.json'))
   .pipe($.chromeManifest({
