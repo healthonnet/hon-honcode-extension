@@ -3,11 +3,11 @@ var googleSearch = 'Verify selectors in ' +
 var yahooSearch = 'Verify selectors in ' +
   'Yahoo search results';
 var bingSearch = 'Verify selectors in ' +
-  ' Bing search results';
+  'Bing search results';
 var wikiPage = 'Verify selectors in ' +
-  ' Wikipedia pages';
-var mediaPage = 'Verify selectors in ' +
-  ' Mediaplus pages';
+  'Wikipedia pages';
+var medlinePage = 'Verify selectors in ' +
+  'MedlinePlus pages';
 
 
 // Google
@@ -90,10 +90,7 @@ casper.test.begin(wikiPage, 2, function suite(test) {
   });
 
   casper.then(function() {
-
-    test.assertTitle('WebMD - Wikipedia',
-      'bing title is ok');
-
+    test.assertTitle('WebMD - Wikipedia', 'wikipedia title is ok');
   });
 
   casper.run(function() {
@@ -102,15 +99,14 @@ casper.test.begin(wikiPage, 2, function suite(test) {
 });
 
 // Mediaplus
-casper.test.begin(mediaPage, 1, function suite(test) {
+casper.test.begin(medlinePage, 1, function suite(test) {
 
-  casper.start('https://www.nlm.nih.gov/medlineplus/triglycerides.html',
+  casper.start('https://medlineplus.gov/triglycerides.html',
     function() {
     this.waitForSelector('a.reveal');
   });
   casper.then(function() {
-    test.assertTitle('Triglycerides: MedlinePlus',
-      'bing title is ok');
+    test.assertTitle('Triglycerides: MedlinePlus', 'medline plus title is ok');
   });
   casper.run(function() {
     test.done();
