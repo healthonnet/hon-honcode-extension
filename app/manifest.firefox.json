@@ -243,9 +243,7 @@
         "*://*.google.co.zm/*",
         "*://*.google.co.zw/*",
         "*://*.bing.com/*",
-        "*://*.search.yahoo.com/*",
-        "*://*.wikipedia.org/*",
-        "*://*.nlm.nih.gov/medlineplus/*"
+        "*://*.search.yahoo.com/*"
       ],
       "js": [
         "bower_components/jquery/dist/jquery.min.js",
