@@ -13,6 +13,7 @@ Browser Compatibilies
 ---------------------
  - Chrome (18+)
  - chromium based Opera versions (15.0+).
+ - Firefox (48+)
 
 Development Prerequisites
 -------------------------
