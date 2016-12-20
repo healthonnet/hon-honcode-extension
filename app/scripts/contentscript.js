@@ -97,8 +97,8 @@ var updateLinks = function() {
     hrefSelector = 'a.external.text';
     honLogoSize = 'wide';
   }
-  // Match Mediaplus
-  else if (chrome.omnibox && window.location.host.indexOf('nlm') > -1) {
+  // Match MedlinePlus
+  else if (chrome.omnibox && window.location.host.indexOf('medlineplus') > -1) {
     hrefSelector = '.reveal';
     honLogoSize = 'wide';
   }
