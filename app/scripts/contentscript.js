@@ -93,12 +93,12 @@ var updateLinks = function() {
     hrefSelector = 'li.b_algo h2>a';
   }
   // Match Wikipedia
-  else if (window.location.host.indexOf('wikipedia') > -1) {
+  else if (chrome.omnibox && window.location.host.indexOf('wikipedia') > -1) {
     hrefSelector = 'a.external.text';
     honLogoSize = 'wide';
   }
   // Match Mediaplus
-  else if (window.location.host.indexOf('nlm') > -1) {
+  else if (chrome.omnibox && window.location.host.indexOf('nlm') > -1) {
     hrefSelector = '.reveal';
     honLogoSize = 'wide';
   }
