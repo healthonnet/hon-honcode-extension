@@ -1,5 +1,13 @@
 HONcode Extension Changelog
 ===========================
 
+### v2.0.1 / 2016-12-21
+
+ - Initial release for Firefox (as Web Extension)
+ - Disable Wikipedia and MedlinePlus feature in Firefox
+ - Add build firefox option
+ - Update gulp-if dependency
+
 ### v2.0.0 / 2016-06-29
-- Initial release for Chrome
+
+ - Initial release for Chrome
