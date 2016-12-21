@@ -25,13 +25,15 @@ h2 {
 
 h3 {
   font-size: 14pt;
-  color: #44484b;
-  font-variant: small-caps;
 }
 
 a:link, a:visited {
   color: rgb(21,127,173);
   text-decoration: none;
+}
+
+a.btn:link, a.btn:visited {
+  color: white;
 }
 
 a:hover {
@@ -62,6 +64,73 @@ a:hover {
   width: 100%;
 }
 
+#certification {
+  text-shadow: 0 2px 10px white;
+  color: rgb(20,40,40);
+}
+
+#certification h2,
+#certification h3 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 18pt;
+}
+
+#certification h2 {
+  padding: 20px 0 10px 0;
+}
+
+#certification h3 {
+  font-weight: 400;
+  font-size: 16pt;
+}
+
+.certification-grey {
+  background-color: lightgrey;
+}
+
+.certification-green {
+  background-color: limegreen;
+}
+
+.img-seal {
+  width: 128px;
+  height: 124px;
+  background: url(../images/seal-hon-certified.png) no-repeat top left;
+  vertical-align: top;
+}
+
+.wrapper-hon-year {
+  text-align: center;
+  padding-top: 8px;
+}
+
+.hon-number-year {
+  font-size: 40px;
+  color: white;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.hon-text-year {
+  font-size: 15px;
+  line-height: 15px;
+  color: white;
+  font-weight: 500;
+  display: block;
+}
+
+#seal-link {
+  height: 124px;
+}
+
+.wrapper-link {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
 .box {
   margin: 10px;
   padding: 8px;
@@ -70,80 +139,8 @@ a:hover {
   overflow: hidden;
 }
 
-.left, .right {
-  width: 50%;
-  float: left;
-  height: 240px;
-  text-align: center;
-}
-
-.left img, .right img {
-  width: 60px;
-}
-
-.img-container {
-  height: 90px;
-  display: block;
-}
-
-.hrv {
-  height: 160px;
-  position: absolute;
-  top: 80px;
-  left: 251px;
-  border-right: #dbdcdb solid 1px;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  -webkit-column-count: 2;
-     -moz-column-count: 2;
-          column-count: 2;
-}
-
-li {
-  list-style: none;
-}
-
-li i {
-  color: rgb(215,215,215);
-}
-
 .bottom {
   clear: both;
-}
-
-.community {
-  margin: 0 auto;
-}
-
-.half {
-  width: 50%;
-  float: left;
-  position: relative;
-}
-
-.ratings {
-  position: absolute;
-  right: 0;
-  top: 20px;
-  margin-right: 10px;
-}
-
-#stars {
-  float: right;
-  margin-right: 10px;
-}
-
-.credit {
-  margin-left: 10px;
-}
-
-.credit img {
-  padding-top: 3px;
-  height: 30px;
 }
 
 .footer {
@@ -154,62 +151,4 @@ li i {
 
 .footer p {
   margin: 0;
-}
-
-.trustability {
-  height: 230px;
-}
-
-.icons {
-  width: 50%;
-  text-align: center;
-}
-
-.easy, .average, .difficult {
-  background-size: cover;
-  height: 60px;
-  width: 60px;
-  background-color: #cdcdcd;
-}
-
-.search input[type|='text'] {
-  width: 80%;
-  border: rgb(215,215,215) solid 1px;
-  margin: 0;
-  padding: 5px;
-  height: 22px;
-  border-radius: 5px;
-}
-
-.search input[type|='submit'] {
-  width: 15%;
-  border: rgb(215,215,215) solid 1px;
-  margin: 0;
-  height: 35px;
-  border-radius: 5px;
-  background: linear-gradient(#49708f, #293f50);
-  color: white;
-}
-
-.readability-circle, .trustability-circle {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
-}
-
-.readability-circle span,
-.trustability-circle span {
-  position: absolute;
-  width: 100%;
-  display: block;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 32pt;
-  color: rgb(125, 125, 125);
-}
-
-.auto {
-  text-align: center;
-  color: rgb(125,125,125);
 }
