@@ -1,8 +1,8 @@
 {
 
-  "description": "Add honCode informations on Search Engines results",
+  "description": "Search and navigate the medical web with complete confidence thanks to the thousands of HONcode websites certified.",
   "manifest_version": 2,
-  "name": "hon-honcode-extension",
+  "name": "HONcode Toolbar",
   "version": "2.0.0",
   "default_locale":"en",
   "icons": {
@@ -13,8 +13,8 @@
 
   "applications": {
     "gecko": {
-      "id": "honcode_extension@healthonnet.org",
-      "strict_min_version": "46.0.0"
+      "id": "hontoolbar@hon.ch",
+      "strict_min_version": "48.0.0"
     }
   },
 
@@ -33,7 +33,7 @@
       "48": "images/icon-invalid-48.png",
       "128": "images/icon-invalid-128.png"
     },
-    "default_title": "HonCode"
+    "default_title": "HONcode"
   },
 
   "permissions": [
