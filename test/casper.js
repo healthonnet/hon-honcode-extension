@@ -98,7 +98,7 @@ casper.test.begin(wikiPage, 2, function suite(test) {
   });
 });
 
-// Mediaplus
+// MedlinePlus
 casper.test.begin(medlinePage, 1, function suite(test) {
 
   casper.start('https://medlineplus.gov/triglycerides.html',

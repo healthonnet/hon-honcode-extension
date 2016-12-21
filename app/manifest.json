@@ -236,7 +236,7 @@
         "*://*.bing.com/*",
         "*://*.search.yahoo.com/*",
         "*://*.wikipedia.org/*",
-        "*://*.nlm.nih.gov/medlineplus/*"
+        "*://medlineplus.gov/*"
       ],
       "js": [
         "bower_components/jquery/dist/jquery.min.js",
