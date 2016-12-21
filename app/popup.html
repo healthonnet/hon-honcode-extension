@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HONCode</title>
+    <!-- build:js scripts/bundle.js -->
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./scripts/popup.js"></script>
+    <!-- endbuild -->
+    <!-- build:css styles/bundle.css -->
+    <link rel="stylesheet" href="./bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./styles/popup.css">
+    <!-- endbuild -->
+</head>
+<body>
+  <div class="header">
+    <img id="popupIcon" src="images/icon-48.png" alt="icon"/>
+    <h1></h1>
+  </div>
+
+  <div class="kconnect box">
+    <h2 id="host"></h2>
+    <div class="left">
+      <h3 id="trustability"></h3>
+      <div class="trustability-circle">
+        <span></span>
+      </div>
+      <p id="trustability-content"></p>
+    </div>
+    <div class="right">
+      <h3 id="readability"></h3>
+      <div class="readability-circle">
+        <span></span>
+      </div>
+      <p id="readability-content"></p>
+    </div>
+    <p class="auto"></p>
+    <div class="site-jabber" id="users">
+    </div>
+  </div>
+
+  <div class="search box">
+    <h2 id="khresmoi"></h2>
+    <form action="http://everyone.khresmoi.eu/hon-search" method="get" target="_blank">
+      <input type="text" name="q" id="q">
+      <input type="hidden" name="start" value="0">
+      <input type="hidden" name="fq" value="docType:html">
+      <input type="hidden" name="group.field" value="domain">
+      <input type="hidden" name="overrideQ">
+      <input type="hidden" name="searchLanguage" id="searchLanguage">
+      <input type="submit" id="searchSubmit">
+    </form>
+  </div>
+
+  <div class="footer">
+    <p>
+      © 2016 -
+      <a href="https://hon.ch/20-years" target="_blank">Health On the Net</a>
+      <!-- - <a href="#" target="_blank">Privacy policy</a> -->
+    </p>
+  </div>
+
+  <div class="hrv"></div>
+
+</body>
+</html>
