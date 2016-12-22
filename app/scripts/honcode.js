@@ -41,6 +41,8 @@ var honcode = {
           'https://dev.myhealthonnet.org/index.php/en/?option=' +
           'com_honcodemembership&controller=honcodeseniority&task=' +
           'getSeniority&honconduct=' + code, function(data) {
+            // Calculate Expiration Date
+            var day = moment.unix(data.last_certification);
 
             // Show loyalty badge information
             $('#loyalty-badge').html(
@@ -57,7 +59,7 @@ var honcode = {
             // Show HONCode seal badge
             $('#seal-badge').html(
               '<img src="/images/honcode/hon-logo.png" alt="" title="">' +
-              '<h3>Nov 2017</h3>' // TODO: connect with the controller
+              '<h3>' + day.format('ll') + '</h3>'
             );
           });
         $('#seal-link').html(

@@ -2,6 +2,7 @@
 
 var currentTab;
 var query = {active: true, currentWindow: true};
+moment.locale(navigator.language.substring(0,2));
 
 chrome.tabs.query(query, function(tabs) {
   currentTab = tabs[0];
