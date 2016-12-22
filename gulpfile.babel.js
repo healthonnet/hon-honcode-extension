@@ -120,7 +120,7 @@ gulp.task('lang', () => {
     .pipe(argv.firefox ? gulp.dest('distFirefox') : gulp.dest('dist'));
 });
 
-gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+gulp.task('clean', del.bind(null, ['.tmp', 'dist', 'distFirefox']));
 
 gulp.task('watch', ['lint', 'html'], () => {
   $.livereload.listen();
@@ -151,10 +151,13 @@ gulp.task('wiredep', () => {
 });
 
 gulp.task('package', () => {
-  var manifest = require('./dist/manifest.json');
+  var chromeManifest  = require('./dist/manifest.json');
+  var firefoxManifest = require('./distFirefox/manifest.json');
   del.sync(['dist/README.txt', 'dist/**/*.map']);
   return gulp.src('dist/**')
-      .pipe($.zip('hon honcode extension-' + manifest.version + '.zip'))
+      .pipe(argv.firefox ?
+        $.zip('HONcode-Toolbar-v' + firefoxManifest.version + '-Firefox.zip') :
+        $.zip('HONcode-Toolbar-v' + chromeManifest.version + '-Chrome.zip'))
       .pipe(gulp.dest('package'));
 });
 
