@@ -239,7 +239,7 @@
         "*://medlineplus.gov/*"
       ],
       "js": [
-        "bower_components/jquery/dist/jquery.min.js",
+        "lib/jquery/dist/jquery.min.js",
         "scripts/utils/md5.js",
         "scripts/utils/tld.js",
         "scripts/utils/hash.js",

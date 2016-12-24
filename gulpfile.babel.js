@@ -34,6 +34,7 @@ gulp.task('lint', () => {
     'app/scripts/**/*.js',
     'test/**/*.js',
     '!app/scripts/utils/*.js',
+    '!app/lib/**/*.js',
   ])
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'));
@@ -44,6 +45,7 @@ gulp.task('jscs', () => {
     'app/scripts/**/*.js',
     'test/**/*.js',
     '!app/scripts/utils/tld.js',
+    '!app/lib/**/*.js',
   ])
     .pipe(jscs('.jscsrc'))
     .pipe(jscs.reporter());
