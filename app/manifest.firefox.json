@@ -3,7 +3,7 @@
   "description": "Search and navigate the medical web with complete confidence thanks to the thousands of HONcode websites certified.",
   "manifest_version": 2,
   "name": "HONcode Toolbar",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "default_locale":"en",
   "icons": {
     "16": "images/icon-16.png",
