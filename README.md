@@ -1,103 +1,65 @@
-HonCode extension
-=================
+<p align="center">
+  <img alt="HONcode Toolbar" src="https://raw.githubusercontent.com/healthonnet/hon-honcode-extension/master/assets/readme-logo.png">
+</p>
 
-[![Build Status](https://travis-ci.org/healthonnet/hon-honcode-extension.svg?branch=master)](https://travis-ci.org/healthonnet/hon-honcode-extension)
-[![GitHub issues](https://img.shields.io/github/issues/healthonnet/hon-honcode-extension.svg)](https://github.com/healthonnet/hon-honcode-extension/issues)
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/d/honcode-toolbar/migljoiadpobjnfkpmbpjekghdiilneb.svg)](https://chrome.google.com/webstore/detail/honcode-toolbar/migljoiadpobjnfkpmbpjekghdiilneb)
-[![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/healthonnet/hon-honcode-extension/master/LICENSE)
+<p align="center">
+  Search and navigate the medical web with complete confidence.
+</p>
 
-Add HonCode informations into google/yahoo/bing 's results
+<p align="center">
+  <a href="https://travis-ci.org/healthonnet/hon-honcode-extension">
+    <img alt="Travis Status" src="https://travis-ci.org/healthonnet/hon-honcode-extension.svg?branch=master">
+  </a>
+  <a href='https://gemnasium.com/github.com/healthonnet/hon-honcode-extension'>
+    <img src="https://gemnasium.com/badges/github.com/healthonnet/hon-honcode-extension.svg" alt="Dependency Status" />
+  </a>
+  <a href="https://github.com/healthonnet/hon-honcode-extension/issues">
+    <img alt="Github Issues" src="https://img.shields.io/github/issues/healthonnet/hon-honcode-extension.svg">
+  </a>
+  <a href="https://raw.githubusercontent.com/healthonnet/hon-honcode-extension/master/LICENSE">
+    <img alt="Apache License 2.0" src="https://img.shields.io/badge/license-Apache%202-blue.svg">
+  </a>
+</p>
 
-
-Browser Compatibilies
----------------------
- - Chrome (18+)
- - chromium based Opera versions (15.0+).
- - Firefox (48+)
-
-Development Prerequisites
--------------------------
-Casperjs is used for integration testing. In order to run it you need :
- - [Python](https://www.python.org/)  2.6 or greater for casperjs in the bin/ directory
-
-Build
------
-
-```bash
-$ npm install
-```
-
-Test
-----
-
-```bash
-$ npm test
-```
-
-Run
 ---
 
-```bash
-$ gulp
-```
+Overview
+--------
 
-Or you can use watch task to update source continuously
-```bash
-$ gulp watch
-```
+The number and varied quality of health web pages can be daunting for users
+searching for health information on the Internet. But thanks to the HONcode
+toolbar, it is easy to differentiate good quality sites from those that are not.
 
-Enable extension on Chrome
---------------------------
+Install
+-------
 
-You have to package the extension:
+It can be installed through:
+ * [the Chrome Web Store](https://chrome.google.com/webstore/detail/honcode-toolbar/migljoiadpobjnfkpmbpjekghdiilneb)
+ * [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/hon-toolbar/)
+ * the Opera Web Store (coming soon)
 
-```bash
-$ gulp chrome-prod
-```
+Features
+--------
 
-Then unzip the extension in package directory.
+ * Easily identify HONcode certified websites while browsing
+ * Easily identify HONcode certified websites in the search results of major search engines (Google, Bing and Yahoo)
+ * Search only among sites that are HONcode certified, so that you know the results lead to sites that are trustworthy.
 
-Finally, from google Chrome:
+Contributing to HONcode Toolbar
+-------------------------------
 
- - Go to Settings ==> Extensions
- - Enable Developer mode
- - load unpacked extension...
- - select /package/hon code extension-VERSION_NUMBER
+Contributions are always welcome, no matter how large or small.
 
-Build extension for Firefox
----------------------------
-
-The extension is compatible with Firefox 48+
-
-In order to build the app for this platform simply add the optional parameter :
-
-```bas
-$ gulp build --firefox
-```
-
-Then check `distFirefox` directory
-
-Usage
------
-
-There are 3 features:
-
- - Get HONcode certification in search engines, wikipedia and medline;
- - See if the current page is HONcode certified;
- - Type ```hon``` in the omnibox bar in Google Chrome and search among HONcode certified websites.
-
-TODO
-----
-
- - Extension options
+See [Contributing](CONTRIBUTING.md).
 
 Developers
 ----------
 
- - Cedric FROSSARD
- - Pierre REPETTO-ANDIPATIN
- - William BELLE
+* Cedric FROSSARD
+* Pierre REPETTO-ANDIPATIN
+* William BELLE
 
 License
 -------
-Apache Licence 2.0
+
+Apache License 2.0
