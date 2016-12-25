@@ -109,9 +109,9 @@ gulp.task('chromeManifest', () => {
     },
   }))
   .pipe($.if('*.css', $.minifyCss({compatibility: '*'})))
-  .pipe($.if('*.js', $.sourcemaps.init()))
-  .pipe($.if('*.js', $.uglify()))
-  .pipe($.if('*.js', $.sourcemaps.write('.')))
+  .pipe($.if(/^(.{0,3}|.*(?!\.min).{4})\.js$/, $.sourcemaps.init()))
+  .pipe($.if(/^(.{0,3}|.*(?!\.min).{4})\.js$/, $.uglify()))
+  .pipe($.if(/^(.{0,3}|.*(?!\.min).{4})\.js$/, $.sourcemaps.write('.')))
   .pipe(argv.firefox ? gulp.dest('distFirefox') : gulp.dest('dist'));
 });
 
