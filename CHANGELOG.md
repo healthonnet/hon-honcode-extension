@@ -1,5 +1,11 @@
-HONcode Extension Changelog
-===========================
+HONcode Toolbar Changelog
+=========================
+
+### v2.0.2 / 2016-12-25
+ - Add package firefox option
+ - Rename `bower_components` folder as `lib`
+ - Don't minify files containing `*.min.js`
+ - Improve README
 
 ### v2.0.1 / 2016-12-21
 
