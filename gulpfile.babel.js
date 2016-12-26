@@ -153,13 +153,18 @@ gulp.task('wiredep', () => {
 });
 
 gulp.task('package', () => {
-  var chromeManifest  = require('./dist/manifest.json');
-  var firefoxManifest = require('./distFirefox/manifest.json');
+  var manifest;
+  if (argv.firefox) {
+    manifest = require('./distFirefox/manifest.json');
+    del.sync(['distFirefox/README.txt', 'distFirefox/**/*.map']);
+    return gulp.src('distFirefox/**')
+        .pipe($.zip('HONcode-Toolbar-v' + manifest.version + '-Firefox.zip'))
+        .pipe(gulp.dest('package'));
+  }
+  manifest = require('./dist/manifest.json');
   del.sync(['dist/README.txt', 'dist/**/*.map']);
   return gulp.src('dist/**')
-      .pipe(argv.firefox ?
-        $.zip('HONcode-Toolbar-v' + firefoxManifest.version + '-Firefox.zip') :
-        $.zip('HONcode-Toolbar-v' + chromeManifest.version + '-Chrome.zip'))
+      .pipe($.zip('HONcode-Toolbar-v' + manifest.version + '-Chrome.zip'))
       .pipe(gulp.dest('package'));
 });
 
