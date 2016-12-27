@@ -92,7 +92,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 chrome.webRequest.onCompleted.addListener(debounce(function(details) {
     chrome.tabs.executeScript(
       details.tabId, {
-        file: 'bower_components/jquery/dist/jquery.min.js',
+        file: 'lib/jquery/dist/jquery.min.js',
         allFrames: true,
       }
     );
