@@ -5,7 +5,8 @@
   "dependencies": {
     "jquery": "^2.2.0",
     "bootstrap": "^3.3.7",
-    "moment": "^2.17.1"
+    "moment": "^2.17.1",
+    "flag-css": "^0.0.7"
   },
   "homepage": "https://github.com/healthonnet/hon-honcode-extension",
   "license": "Apache",

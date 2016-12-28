@@ -144,6 +144,11 @@ gulp.task('size', () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
+gulp.task('flags', () => {
+  return gulp.src('app/lib/flag-css/dist/flags/*.svg')
+    .pipe(gulp.dest('dist/flags'));
+});
+
 gulp.task('wiredep', () => {
   gulp.src('app/*.html')
     .pipe(wiredep({
@@ -178,7 +183,7 @@ gulp.task('test', () => {
 gulp.task('build', (cb) => {
   runSequence(
     ['html', 'images', 'extras'],
-    'chromeManifest',
+    'chromeManifest', 'flags',
     'lang', 'size', cb);
 });
 
