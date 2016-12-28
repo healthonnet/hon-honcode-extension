@@ -55,15 +55,19 @@ var honcode = {
               '</span>' +
               '</div></div>' +
               '</div>' +
-              '<p class="sub-wrapper">Loyalty</p>'
+              '<p class="sub-wrapper">' + chrome.i18n.getMessage('loyalty') +
+              '</p>'
             );
 
             // Show HONCode seal badge
             $('#seal-badge').html(
               '<div class="v-wrapper">' +
-              '<img src="/images/honcode/hon-logo.png" alt="" title="">' +
+              '<img src="/images/honcode/hon-logo.png" alt="' +
+              chrome.i18n.getMessage('HonCodeCertified') + '" title="' +
+              chrome.i18n.getMessage('HonCodeCertified') + '">' +
               '</div>' +
-              '<p class="sub-wrapper">Valid until ' +
+              '<p class="sub-wrapper">' +
+              chrome.i18n.getMessage('validUntil') + ' ' +
               day.format('MMM YYYY') + '</p>'
             );
           });
