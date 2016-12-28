@@ -43,9 +43,11 @@ var honcode = {
           'getSeniority&honconduct=' + code, function(data) {
             // Calculate Expiration Date
             var day = moment.unix(data.last_certification);
+            day.add(1, 'years');
 
             // Show loyalty badge information
             $('#loyalty-badge').html(
+              '<div class="v-wrapper">' +
               '<div class="img-seal">' +
               '<div class="wrapper-hon-year">' +
               '<span class="hon-number-year">' + data.years + '</span>' +
@@ -53,27 +55,30 @@ var honcode = {
               chrome.i18n.getMessage('years') +
               '</span>' +
               '</div></div>' +
-              '<h3>Loyalty</h3>' // TODO: remove this placeholder
+              '</div>' +
+              '<p class="sub-wrapper">Loyalty</p>'
             );
 
             // Show HONCode seal badge
             $('#seal-badge').html(
+              '<div class="v-wrapper">' +
               '<img src="/images/honcode/hon-logo.png" alt="" title="">' +
-              '<h3>' + day.format('ll') + '</h3>'
+              '</div>' +
+              '<p class="sub-wrapper">Valid until ' +
+              day.format('MMM YYYY') + '</p>'
             );
           });
-        $('#seal-link').html(
-          '<div class="wrapper-link">' +
-          '<a class="btn btn-primary center" ' +
-          'href="https://www.hon.ch/HONcode/Conduct.html?' +
+        $('#view-certificate').html(
+          '<a href="https://www.hon.ch/HONcode/Conduct.html?' +
           code +
-          '" target="_blank">More</a>' + // TODO: remove this placeholder
-          '</div>'
+          '" target="_blank">' +
+          chrome.i18n.getMessage('viewCertificate') + '</a>'
         );
+
+        $('#badges').show();
       } else {
         $('#certification').addClass('certification-grey');
         $('#certification-header').html(chrome.i18n.getMessage('uncertified'));
-        $('#badges').remove();
       }
     });
   },
