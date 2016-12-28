@@ -50,7 +50,7 @@ if (chrome.omnibox) {
       '%2FCSE%2FHONCODE%2Fcontextlink.xml&sa=Search&hl=en&cof=FORID%3A11&q=' +
       encodeURIComponent(text);
     }
-    chrome.tabs.getSelected(null, function(tab) {
+    chrome.tabs.query({active: true}, function(tab) {
       chrome.tabs.update(tab.id, {url: url});
     });
   });
