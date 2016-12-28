@@ -77,8 +77,6 @@ var honcode = {
           '" target="_blank">' +
           chrome.i18n.getMessage('viewCertificate') + '</a>'
         );
-
-        $('#badges').show();
       } else {
         $('#certification').addClass('certification-grey');
         $('#certification-header').html(chrome.i18n.getMessage('uncertified'));

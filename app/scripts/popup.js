@@ -11,6 +11,5 @@ chrome.tabs.query(query, function(tabs) {
   $('#q').attr('placeholder',
     chrome.i18n.getMessage('khresmoiPlaceholder'));
   $('#searchSubmit').html(chrome.i18n.getMessage('khresmoiSearch'));
-  $('#badges').hide();
   honcode.setDate(currentTab.url);
 });
