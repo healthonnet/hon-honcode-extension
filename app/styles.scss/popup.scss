@@ -1,0 +1,197 @@
+body {
+  margin: 0;
+  width: 600px;
+  overflow: hidden;
+  background-color: whitesmoke;
+  color: #2d2926;
+}
+
+*:focus { outline:none; }
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+h2 {
+  font-size: 16pt;
+}
+
+h3 {
+  font-size: 14pt;
+}
+
+a:link, a:visited {
+  color: rgb(21,127,173);
+  text-decoration: none;
+  outline: none;
+}
+
+a.btn:link, a.btn:visited {
+  color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.header, .box {
+  background-color: white;
+  border-bottom: #dbdcdb solid 1px;
+}
+
+.header {
+  position: relative;
+  height: 35px;
+  img {
+    position: absolute;
+    height: 30px;
+    top: 0;
+    left: 0;
+  }
+  div {
+    position: absolute;
+    top: 0;
+    line-height: 0;
+    width: 100%;
+  }
+  p {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+  }
+  h1 {
+    font-size: 12pt;
+    font-weight: 600;
+    padding: 10px;
+  }
+}
+
+#certification {
+  color: white;
+  h2, h3 {
+    text-align: center;
+  }
+  h2 {
+    padding: 40px 0 5px 0;
+    font-weight: 300;
+    font-size: 18pt;
+  }
+  h3 {
+    font-weight: 500;
+    font-size: 12pt;
+    padding-bottom: 40px;
+  }
+}
+
+.certification-grey {
+  background-color: silver;
+}
+
+.certification-green {
+  background-color: limegreen;
+}
+
+.cell {
+  height: 140px;
+  padding: 0;
+}
+
+.border-bottom {
+  border-bottom: #dbdcdb solid 1px;
+}
+
+.border-right {
+  border-right: #dbdcdb solid 1px;
+}
+
+.img-seal {
+  height: 100px;
+  background: url(../images/seal-hon-certified.png) no-repeat center;
+  background-size: 100px;
+  vertical-align: top;
+}
+
+.v-wrapper {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  height: 120px;
+}
+
+.sub-wrapper {
+  font-size: 12px;
+  padding-bottom: 2px;
+  text-align: center;
+}
+
+.wrapper-hon-year {
+  text-align: center;
+  padding-top: 8px;
+}
+
+.hon-number-year {
+  font-size: 35px;
+  color: white;
+  font-weight: 700;
+  line-height: 35px;
+}
+
+.hon-text-year {
+  font-size: 12px;
+  line-height: 12px;
+  color: white;
+  font-weight: 500;
+  display: block;
+}
+
+.wrapper-link {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.box {
+  margin: 10px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+form {
+  padding-top: 10px;
+}
+
+.bottom {
+  clear: both;
+}
+
+.footer {
+  background-color: white;
+  border-top: #dbdcdb solid 1px;
+  padding: 6px;
+  p {
+    margin: 0;
+  }
+}
+
+#seal-badge {
+  h3 {
+    margin-top: 5px;
+  }
+  img {
+    margin: 0 auto;
+    display: block;
+    height: 100px;
+  }
+}
+
+.search {
+  padding: 8px 14px;
+  h2 {
+    font-weight: 300;
+    text-align: center;
+  }
+}

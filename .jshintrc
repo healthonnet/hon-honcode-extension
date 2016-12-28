@@ -19,6 +19,7 @@
   "globals" : {
     "$": true,
     "jQuery": true,
+    "moment": true,
     "chrome": true,
     "honcode": true,
     "crypto": true,

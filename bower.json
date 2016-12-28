@@ -3,7 +3,18 @@
   "private": true,
   "version": "2.0.2",
   "dependencies": {
-    "jquery": "^2.2.0"
+    "jquery": "^2.2.0",
+    "bootstrap": "^3.3.7",
+    "moment": "^2.17.1"
   },
-  "devDependencies": {}
+  "homepage": "https://github.com/healthonnet/hon-honcode-extension",
+  "license": "Apache",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ]
 }
