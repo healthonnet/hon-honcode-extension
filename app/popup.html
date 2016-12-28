@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HONCode</title>
+    <title>HONcode Toolbar</title>
     <!-- build:js scripts/bundle.js -->
     <script src="./bower_components/moment/min/moment-with-locales.min.js"></script>
     <script src="./bower_components/jquery/dist/jquery.min.js"></script>
@@ -21,34 +21,49 @@
 </head>
 <body>
   <div class="header">
-    <img id="popupIcon" src="images/icon-48.png" alt="icon"/>
+    <!-- <img id="popupIcon" src="images/icon-48.png" alt="icon"/> -->
     <h1></h1>
+    <p id="view-certificate"></p>
   </div>
 
   <div id="certification" class="box">
     <h2 id="certification-header"></h2>
-    <h3 id="certification-domain">def</h3>
+    <h3 id="certification-domain"></h3>
   </div>
 
   <div class="box row" id="badges">
-    <div class="col-xs-4" id="seal-badge">
+    <div class="row">
+      <div class="col-xs-4 cell border-right border-bottom" id="seal-badge">
+      </div>
+      <div class="col-xs-4 cell border-right border-bottom" id="loyalty-badge">
+      </div>
+      <div class="col-xs-4 cell border-bottom" id="seal-link">
+      </div>
     </div>
-    <div class="col-xs-4" id="loyalty-badge">
-    </div>
-    <div class="col-xs-4" id="seal-link">
+    <div class="row">
+      <div class="col-xs-4 cell border-right">
+      </div>
+      <div class="col-xs-4 cell border-right">
+      </div>
+      <div class="col-xs-4 cell">
+      </div>
     </div>
   </div>
 
   <div class="search box">
     <h2 id="khresmoi"></h2>
-    <form action="http://everyone.khresmoi.eu/hon-search" method="get" target="_blank">
+    <form action="http://everyone.khresmoi.eu/hon-search" class="row" method="get" target="_blank">
       <input type="hidden" name="start" value="0">
       <input type="hidden" name="fq" value="docType:html">
       <input type="hidden" name="group.field" value="domain">
       <input type="hidden" name="overrideQ">
       <input type="hidden" name="searchLanguage" id="searchLanguage">
-      <input type="text" class="form-control" name="q" id="q">
-      <button type="submit" class="btn btn-primary" id="searchSubmit"></button>
+      <div class="col-xs-10">
+        <input type="text" class="form-control" name="q" id="q">
+      </div>
+      <div class="col-xs-2">
+        <button type="submit" class="btn btn-primary" id="searchSubmit"></button>
+      </div>
     </form>
   </div>
 
