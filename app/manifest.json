@@ -241,6 +241,9 @@
       ],
       "js": [
         "lib/jquery/dist/jquery.min.js",
+        "lib/moment/min/moment.min.js",
+        "lib/moment/min/moment-with-locales.min.js",
+        "lib/bootstrap/dist/js/bootstrap.min.js",
         "scripts/utils/md5.js",
         "scripts/utils/tld.js",
         "scripts/utils/hash.js",
@@ -249,6 +252,7 @@
         "scripts/contentscript.js"
       ],
       "css":[
+        "lib/bootstrap/dist/css/bootstrap.min.css",
         "styles/main.css"
       ],
       "run_at": "document_end",

@@ -4,7 +4,6 @@
   "version": "2.0.2",
   "dependencies": {
     "jquery": "^2.2.0",
-    "font-awesome": "^4.7.0",
     "bootstrap": "^3.3.7",
     "moment": "^2.17.1"
   },
