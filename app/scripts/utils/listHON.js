@@ -102,6 +102,7 @@ var hon_listHON =
     var promise = new Promise(function(resolve) {
 
       var result = '';
+      myURL = myURL.toLowerCase();
       // Decoupe l'url sur '/'
       var myURLSplit = myURL.split('/');
       var count = myURLSplit.length;
