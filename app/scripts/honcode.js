@@ -42,8 +42,7 @@ var honcode = {
           'com_honcodemembership&controller=honcodeseniority&task=' +
           'getSeniority&honconduct=' + code, function(data) {
             // Calculate Expiration Date
-            var day = moment.unix(data.last_certification);
-            day.add(1, 'years');
+            var day = moment.unix(data.validity);
 
             // Show loyalty badge information
             $('#loyalty-badge').html(
