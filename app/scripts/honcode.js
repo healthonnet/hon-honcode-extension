@@ -92,7 +92,9 @@ var honcode = {
             }
             $('#type').html(
               '<div class="v-wrapper">' +
-              '<i class="fa fa-cubes fa-5x type-height"></i>' +
+              '<i class="fa fa-cubes fa-5x type-height" ' +
+              'data-toggle="tooltip" data-placement="top" title="' +
+              'Tooltip on top"></i>' +
               '</div>' +
               '<p class="sub-wrapper">' +
               chrome.i18n.getMessage(type) +
@@ -115,6 +117,8 @@ var honcode = {
               chrome.i18n.getMessage('popularity') +
               '</p>'
             );
+
+            console.log($('[data-toggle="tooltip"]'));
           });
         $('#view-certificate').html(
           '<a href="https://www.hon.ch/HONcode/Conduct.html?' +
