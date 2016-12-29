@@ -98,6 +98,30 @@ var honcode = {
               chrome.i18n.getMessage(type) +
               '</p>'
             );
+
+            // Show popularity
+            var popularity = 'thermometer-0';
+            if (data.popularity >= 10000000) {
+              popularity = 'thermometer-0';
+            } else if (data.popularity > 5000000) {
+              popularity = 'thermometer-1';
+            } else if (data.popularity > 1000000) {
+              popularity = 'thermometer-2';
+            } else if (data.popularity > 500000) {
+              popularity = 'thermometer-3';
+            } else {
+              popularity = 'thermometer-4';
+            }
+            console.log(data.popularity, popularity);
+            $('#popularity').html(
+              '<div class="v-wrapper">' +
+              '<i class="fa fa-' + popularity +
+              ' fa-5x popularity-height"></i>' +
+              '</div>' +
+              '<p class="sub-wrapper">' +
+              chrome.i18n.getMessage('popularity') +
+              '</p>'
+            );
           });
         $('#view-certificate').html(
           '<a href="https://www.hon.ch/HONcode/Conduct.html?' +
