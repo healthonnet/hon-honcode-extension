@@ -102,10 +102,16 @@ var honcode = {
             // Show popularity
             $('#popularity').html(
               '<div class="v-wrapper">' +
-              '<i class="fa fa-thermometer-' + data.popularity +
-              ' fa-5x popularity-height" title="' +
-              chrome.i18n.getMessage('alexaRank') + ': ' +
-              data.alexa_rank + '"></i>' +
+              '<span class="fa-stack fa-5x">' +
+              '<i class="fa fa-signal signal-normal"></i>' +
+              '<div class="signal signal-' + data.popularity + '">' +
+              '<i class="fa fa-signal signal-success"></i>' +
+              '</div>' +
+              '</span>' +
+              // '<i class="fa fa-thermometer-' + data.popularity +
+              // ' fa-5x popularity-height" title="' +
+              // chrome.i18n.getMessage('alexaRank') + ': ' +
+              // data.alexa_rank + '"></i>' +
               '</div>' +
               '<p class="sub-wrapper">' +
               chrome.i18n.getMessage('popularity') +

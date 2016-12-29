@@ -210,3 +210,31 @@ form {
   line-height: 100px;
   color: limegreen;
 }
+
+.signal-success {
+  color: limegreen;
+}
+.signal-normal {
+  color: silver;
+}
+.signal{
+    position: relative;
+    overflow: hidden;
+    top: -1.99em;
+    margin-left: 35px;
+   }
+.signal-1 {
+    width: 0.2em;
+}
+.signal-2 {
+    width: 0.4em;
+}
+.signal-3 {
+    width: 0.6em;
+}
+.signal-4 {
+    width: .8em;
+}
+.signal-5 {
+    width: 1em;
+}
