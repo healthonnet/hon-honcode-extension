@@ -1,8 +1,9 @@
 body {
   margin: 0;
-  width: 600px;
+  width: 480px;
+  height: 515px;
   overflow: hidden;
-  background-color: whitesmoke;
+  background-color: white;
   color: #2d2926;
 }
 
@@ -58,12 +59,12 @@ a:hover {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 10px;
+    padding: 8px 10px;
   }
   h1 {
     font-size: 12pt;
     font-weight: 600;
-    padding: 10px;
+    padding: 8px 10px;
   }
 }
 
@@ -73,14 +74,14 @@ a:hover {
     text-align: center;
   }
   h2 {
-    padding: 40px 0 5px 0;
+    padding: 25px 0 10px 0;
     font-weight: 300;
     font-size: 18pt;
   }
   h3 {
-    font-weight: 500;
+    font-weight: 400;
     font-size: 12pt;
-    padding-bottom: 40px;
+    padding-bottom: 25px;
   }
 }
 
@@ -89,7 +90,7 @@ a:hover {
 }
 
 .certification-green {
-  background-color: limegreen;
+  background-color: #82cc00;
 }
 
 .cell {
@@ -106,9 +107,9 @@ a:hover {
 }
 
 .img-seal {
-  height: 100px;
+  height: 85px;
   background: url(../images/seal-hon-certified.png) no-repeat center;
-  background-size: 100px;
+  background-size: 85px;
   vertical-align: top;
 }
 
@@ -117,12 +118,12 @@ a:hover {
   top: 50%;
   transform: translateY(-50%);
   text-align: center;
-  height: 120px;
+  height: 100px;
 }
 
 .sub-wrapper {
   font-size: 12px;
-  padding-bottom: 2px;
+  padding: 15px 0 2px 0;
   text-align: center;
 }
 
@@ -132,15 +133,15 @@ a:hover {
 }
 
 .hon-number-year {
-  font-size: 35px;
+  font-size: 30px;
   color: white;
   font-weight: 700;
-  line-height: 35px;
+  line-height: 25px;
 }
 
 .hon-text-year {
   font-size: 12px;
-  line-height: 12px;
+  line-height: 5px;
   color: white;
   font-weight: 500;
   display: block;
@@ -151,13 +152,6 @@ a:hover {
   top: 50%;
   transform: translateY(-50%);
   text-align: center;
-}
-
-.box {
-  margin: 10px;
-  border-radius: 5px;
-  position: relative;
-  overflow: hidden;
 }
 
 form {
@@ -184,57 +178,72 @@ form {
   img {
     margin: 0 auto;
     display: block;
-    height: 100px;
+    height: 80px;
   }
 }
 
 .search {
-  padding: 8px 14px;
+  padding: 15px 10px;
   h2 {
     font-weight: 300;
     text-align: center;
   }
+  .col-xs-2 {
+    padding-left: 0;
+  }
 }
 
 .flag-size {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
+}
+
+
+#badges {
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.popularity-pos {
+  margin-top: -20px;
 }
 
 .type-height {
-  line-height: 100px;
+  line-height: 80px;
   color: silver;
 }
 
 .popularity-height {
-  line-height: 100px;
-  color: limegreen;
+  line-height: 80px;
+  color: #82cc00;
 }
 
 .signal-success {
-  color: limegreen;
+  color: #82cc00;
 }
 .signal-normal {
   color: silver;
 }
-.signal{
-    position: relative;
-    overflow: hidden;
-    top: -1.99em;
-    margin-left: 35px;
-   }
+.signal {
+  position: relative;
+  overflow: hidden;
+  top: -1.99em;
+  margin-left: 35px;
+}
 .signal-1 {
-    width: 0.2em;
+  width: 0.2em;
 }
 .signal-2 {
-    width: 0.4em;
+  width: 0.4em;
 }
 .signal-3 {
-    width: 0.6em;
+  width: 0.6em;
 }
 .signal-4 {
-    width: .8em;
+  width: .8em;
 }
 .signal-5 {
-    width: 1em;
+  width: 1em;
 }
