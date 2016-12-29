@@ -149,6 +149,11 @@ gulp.task('flags', () => {
     .pipe(gulp.dest('dist/flags'));
 });
 
+gulp.task('fonts', () => {
+  return gulp.src('app/lib/font-awesome/fonts/*')
+    .pipe(gulp.dest('dist/fonts'));
+});
+
 gulp.task('wiredep', () => {
   gulp.src('app/*.html')
     .pipe(wiredep({
@@ -183,7 +188,7 @@ gulp.task('test', () => {
 gulp.task('build', (cb) => {
   runSequence(
     ['html', 'images', 'extras'],
-    'chromeManifest', 'flags',
+    'chromeManifest', 'flags', 'fonts',
     'lang', 'size', cb);
 });
 
