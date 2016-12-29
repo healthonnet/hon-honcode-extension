@@ -89,7 +89,7 @@ gulp.task('html', ['styles'], () => {
   return gulp.src('app/*.html')
     .pipe(assets)
     .pipe($.sourcemaps.init())
-    // .pipe($.if('*.js', $.uglify()))
+    .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.minifyCss({compatibility: '*'})))
     .pipe($.sourcemaps.write())
     .pipe(assets.restore())
