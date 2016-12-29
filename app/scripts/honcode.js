@@ -102,7 +102,7 @@ var honcode = {
             // Show popularity
             $('#popularity').html(
               '<div class="v-wrapper">' +
-              '<span class="fa-stack fa-5x" title="' +
+              '<span class="popularity-pos fa-stack fa-5x" title="' +
               chrome.i18n.getMessage('alexaRank') + ': ' +
               data.alexa_rank + '">' +
               '<i class="fa fa-signal signal-normal"></i>' +

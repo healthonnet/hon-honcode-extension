@@ -27,12 +27,12 @@
     <p id="view-certificate"></p>
   </div>
 
-  <div id="certification" class="box">
+  <div id="certification">
     <h2 id="certification-header"></h2>
     <h3 id="certification-domain"></h3>
   </div>
 
-  <div class="box row" id="badges">
+  <div id="badges">
     <div class="row">
       <div class="col-xs-4 cell border-right border-bottom" id="seal-badge">
       </div>
@@ -40,18 +40,16 @@
       </div>
       <div class="col-xs-4 cell border-bottom" id="popularity">
       </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-4 cell border-right" id="country">
+      <div class="col-xs-4 cell border-right border-bottom" id="country">
       </div>
-      <div class="col-xs-4 cell border-right" id="type">
+      <div class="col-xs-4 cell border-right border-bottom" id="type">
       </div>
-      <div class="col-xs-4 cell">
+      <div class="col-xs-4 cell border-bottom">
       </div>
     </div>
   </div>
 
-  <div class="search box">
+  <div class="search container">
     <h2 id="khresmoi"></h2>
     <form action="http://everyone.khresmoi.eu/hon-search" class="row" method="get" target="_blank">
       <input type="hidden" name="start" value="0">
@@ -60,20 +58,12 @@
       <input type="hidden" name="overrideQ">
       <input type="hidden" name="searchLanguage" id="searchLanguage">
       <div class="col-xs-10">
-        <input type="text" class="form-control" name="q" id="q">
+        <input type="text" class="form-control" autocomplete="off" name="q" id="q">
       </div>
       <div class="col-xs-2">
         <button type="submit" class="btn btn-primary" id="searchSubmit"></button>
       </div>
     </form>
-  </div>
-
-  <div class="footer">
-    <p>
-      © 2016 -
-      <a href="https://hon.ch/20-years" target="_blank">Health On the Net</a>
-      <!-- - <a href="#" target="_blank">Privacy policy</a> -->
-    </p>
   </div>
 
 </body>
