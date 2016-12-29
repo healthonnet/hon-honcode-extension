@@ -98,6 +98,23 @@ var honcode = {
               chrome.i18n.getMessage(type) +
               '</p>'
             );
+
+            // Show popularity
+            $('#popularity').html(
+              '<div class="v-wrapper">' +
+              '<span class="fa-stack fa-5x" title="' +
+              chrome.i18n.getMessage('alexaRank') + ': ' +
+              data.alexa_rank + '">' +
+              '<i class="fa fa-signal signal-normal"></i>' +
+              '<div class="signal signal-' + data.popularity + '">' +
+              '<i class="fa fa-signal signal-success"></i>' +
+              '</div>' +
+              '</span>' +
+              '</div>' +
+              '<p class="sub-wrapper">' +
+              chrome.i18n.getMessage('popularity') +
+              '</p>'
+            );
           });
         $('#view-certificate').html(
           '<a href="https://www.hon.ch/HONcode/Conduct.html?' +
