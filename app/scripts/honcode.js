@@ -70,6 +70,17 @@ var honcode = {
               chrome.i18n.getMessage('validUntil') + ' ' +
               day.format('MMM YYYY') + '</p>'
             );
+
+            // Show country
+            $('#country').html(
+              '<div class="v-wrapper">' +
+              '<span class="flag flag-' + data.country.toLowerCase() +
+              ' flag-size"></span>' +
+              '</div>' +
+              '<p class="sub-wrapper">' +
+              chrome.i18n.getMessage('country') +
+              '</p>'
+            );
           });
         $('#view-certificate').html(
           '<a href="https://www.hon.ch/HONcode/Conduct.html?' +
