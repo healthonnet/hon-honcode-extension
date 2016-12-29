@@ -81,6 +81,23 @@ var honcode = {
               chrome.i18n.getMessage('country') +
               '</p>'
             );
+
+            // Show type
+            var type = data.type;
+            if (data.type === 'Non-profit') {
+              type = 'NonProfit';
+            }
+            if (!data.type) {
+              type = 'Unknown';
+            }
+            $('#type').html(
+              '<div class="v-wrapper">' +
+              '<i class="fa fa-cubes fa-5x type-height"></i>' +
+              '</div>' +
+              '<p class="sub-wrapper">' +
+              chrome.i18n.getMessage(type) +
+              '</p>'
+            );
           });
         $('#view-certificate').html(
           '<a href="https://www.hon.ch/HONcode/Conduct.html?' +
