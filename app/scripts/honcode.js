@@ -43,10 +43,19 @@ var honcode = {
           'getSeniority&honconduct=' + code, function(data) {
 
             // Show loyalty badge information
+            var tooltipLoyalty = '';
+            if (data.first_certification !== 0) {
+              tooltipLoyalty =
+                chrome.i18n.getMessage('since') + ' ' +
+                moment.unix(data.first_certification).format('ll');
+            }
+
             $('#loyalty-badge').html(
               '<div class="v-wrapper">' +
               '<div class="img-seal">' +
-              '<div class="wrapper-hon-year">' +
+              '<div class="wrapper-hon-year" ' +
+              'data-toggle="tooltip" data-placement="top" title="' +
+              tooltipLoyalty + '">' +
               '<span class="hon-number-year">' + data.years + '</span>' +
               '<span class="hon-text-year">' +
               chrome.i18n.getMessage('years') +
@@ -96,7 +105,9 @@ var honcode = {
             }
             $('#type').html(
               '<div class="v-wrapper">' +
-              '<i class="fa fa-cubes fa-5x type-height"></i>' +
+              '<i class="fa fa-cubes fa-5x type-height" ' +
+              'data-toggle="tooltip" data-placement="top" title="' +
+              chrome.i18n.getMessage(type) + '"></i>' +
               '</div>' +
               '<p class="sub-wrapper">' +
               chrome.i18n.getMessage(type) +
@@ -106,10 +117,11 @@ var honcode = {
             // Show popularity
             $('#popularity').html(
               '<div class="v-wrapper">' +
-              '<span class="popularity-pos fa-stack fa-5x" title="' +
+              '<span class="popularity-pos fa-stack fa-5x">' +
+              '<i class="fa fa-signal signal-normal" ' +
+              'data-toggle="tooltip" data-placement="top" title="' +
               chrome.i18n.getMessage('alexaRank') + ': ' +
-              data.alexa_rank + '">' +
-              '<i class="fa fa-signal signal-normal"></i>' +
+              data.alexa_rank + '"></i>' +
               '<div class="signal signal-' + data.popularity + '">' +
               '<i class="fa fa-signal signal-success"></i>' +
               '</div>' +
@@ -119,6 +131,8 @@ var honcode = {
               chrome.i18n.getMessage('popularity') +
               '</p>'
             );
+
+            $('[data-toggle="tooltip"]').tooltip();
           });
         $('#view-certificate').html(
           '<a href="https://www.hon.ch/HONcode/Conduct.html?' +
