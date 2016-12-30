@@ -172,7 +172,7 @@ var honcode = {
               '<span class="popularity-pos fa-stack fa-5x"  ' +
               'data-toggle="tooltip" data-placement="bottom" title="' +
               chrome.i18n.getMessage('alexaRank') + ': ' +
-              data.alexa_rank + '">' +
+              data.alexa_rank.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + '">' +
               '<i class="fa fa-signal signal-normal"></i>' +
               '<div class="signal signal-' + data.popularity + '">' +
               '<i class="fa fa-signal signal-success"></i>' +
