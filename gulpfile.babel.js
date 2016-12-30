@@ -130,43 +130,38 @@ var alterJson = lazypipe()
   .pipe(replace, /("\w\w"):("[^"]*")/g, '$1: { "message": $2 }');
 
 gulp.task('lang-de', () => {
-  return mergeStream(download(
-    'https://github.com/umpirsky/country-list/raw/master/data/de/country.json'
-  ).pipe(alterJson()), gulp.src('dist/_locales/de/messages.json'))
-  .pipe(mergeJson('messages.json'))
-  .pipe(gulp.dest('dist/_locales/de'));
+  return mergeStream(gulp.src('./app/lib/country-code/data/de/country.json')
+    .pipe(alterJson()), gulp.src('dist/_locales/de/messages.json'))
+    .pipe(mergeJson('messages.json'))
+    .pipe(gulp.dest('dist/_locales/de'));
 });
 
 gulp.task('lang-en', () => {
-  return mergeStream(download(
-    'https://github.com/umpirsky/country-list/raw/master/data/en/country.json'
-  ).pipe(alterJson()), gulp.src('dist/_locales/en/messages.json'))
-  .pipe(mergeJson('messages.json'))
-  .pipe(gulp.dest('dist/_locales/en'));
+  return mergeStream(gulp.src('./app/lib/country-code/data/en/country.json')
+    .pipe(alterJson()), gulp.src('dist/_locales/en/messages.json'))
+    .pipe(mergeJson('messages.json'))
+    .pipe(gulp.dest('dist/_locales/en'));
 });
 
 gulp.task('lang-es', () => {
-  return mergeStream(download(
-    'https://github.com/umpirsky/country-list/raw/master/data/es/country.json'
-  ).pipe(alterJson()), gulp.src('dist/_locales/es/messages.json'))
-  .pipe(mergeJson('messages.json'))
-  .pipe(gulp.dest('dist/_locales/es'));
+  return mergeStream(gulp.src('./app/lib/country-code/data/es/country.json')
+    .pipe(alterJson()), gulp.src('dist/_locales/es/messages.json'))
+    .pipe(mergeJson('messages.json'))
+    .pipe(gulp.dest('dist/_locales/es'));
 });
 
 gulp.task('lang-fr', () => {
-  return mergeStream(download(
-    'https://github.com/umpirsky/country-list/raw/master/data/fr/country.json'
-  ).pipe(alterJson()), gulp.src('dist/_locales/fr/messages.json'))
-  .pipe(mergeJson('messages.json'))
-  .pipe(gulp.dest('dist/_locales/fr'));
+  return mergeStream(gulp.src('./app/lib/country-code/data/fr/country.json')
+    .pipe(alterJson()), gulp.src('dist/_locales/fr/messages.json'))
+    .pipe(mergeJson('messages.json'))
+    .pipe(gulp.dest('dist/_locales/fr'));
 });
 
 gulp.task('lang-it', () => {
-  return mergeStream(download(
-    'https://github.com/umpirsky/country-list/raw/master/data/it/country.json'
-  ).pipe(alterJson()), gulp.src('dist/_locales/it/messages.json'))
-  .pipe(mergeJson('messages.json'))
-  .pipe(gulp.dest('dist/_locales/it'));
+  return mergeStream(gulp.src('./app/lib/country-code/data/it/country.json')
+    .pipe(alterJson()), gulp.src('dist/_locales/it/messages.json'))
+    .pipe(mergeJson('messages.json'))
+    .pipe(gulp.dest('dist/_locales/it'));
 });
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist', 'distFirefox']));
