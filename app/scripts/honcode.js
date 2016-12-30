@@ -52,10 +52,10 @@ var honcode = {
 
             $('#loyalty-badge').html(
               '<div class="v-wrapper">' +
-              '<div class="img-seal">' +
-              '<div class="wrapper-hon-year" ' +
-              'data-toggle="tooltip" data-placement="top" title="' +
+              '<div class="img-seal" ' +
+              'data-toggle="tooltip" data-placement="bottom" title="' +
               tooltipLoyalty + '">' +
+              '<div class="wrapper-hon-year">' +
               '<span class="hon-number-year">' + data.years + '</span>' +
               '<span class="hon-text-year">' +
               chrome.i18n.getMessage('years') +
@@ -78,7 +78,8 @@ var honcode = {
             $('#seal-badge').html(
               '<div class="v-wrapper">' +
               '<img src="/images/honcode/hon-logo.png" alt="' +
-              chrome.i18n.getMessage('HonCodeCertified') + '" title="' +
+              chrome.i18n.getMessage('HonCodeCertified') +
+              '" data-toggle="tooltip" data-placement="bottom" title="' +
               chrome.i18n.getMessage('HonCodeCertified') + '">' +
               '</div>' +
               '<p class="sub-wrapper">' + validity + '</p>'
@@ -90,7 +91,7 @@ var honcode = {
                 '<div class="v-wrapper">' +
                 '<span class="flag flag-' + data.country.toLowerCase() +
                 ' flag-size" ' +
-                'data-toggle="tooltip" data-placement="top" title="' +
+                'data-toggle="tooltip" data-placement="bottom" title="' +
                 chrome.i18n.getMessage(data.country.toUpperCase()) + '">' +
                 '</span>' +
                 '</div>' +
@@ -168,11 +169,11 @@ var honcode = {
             // Show popularity
             $('#popularity').html(
               '<div class="v-wrapper">' +
-              '<span class="popularity-pos fa-stack fa-5x">' +
-              '<i class="fa fa-signal signal-normal" ' +
-              'data-toggle="tooltip" data-placement="top" title="' +
+              '<span class="popularity-pos fa-stack fa-5x"  ' +
+              'data-toggle="tooltip" data-placement="bottom" title="' +
               chrome.i18n.getMessage('alexaRank') + ': ' +
-              data.alexa_rank + '"></i>' +
+              data.alexa_rank + '">' +
+              '<i class="fa fa-signal signal-normal"></i>' +
               '<div class="signal signal-' + data.popularity + '">' +
               '<i class="fa fa-signal signal-success"></i>' +
               '</div>' +
