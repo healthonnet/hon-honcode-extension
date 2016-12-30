@@ -31,7 +31,7 @@ var honcode = {
     });
   },
 
-  setDate: function(link) {
+  setBadges: function(link) {
     hon_listHON.checkURL(hon_listHON.formatHREF(link)).then(function(code) {
       $('#certification-domain').html(honcode.getDomainFromUrl(link));
       if (code !== '' && code !== undefined) {
@@ -41,149 +41,11 @@ var honcode = {
           'https://dev.myhealthonnet.org/index.php/en/?option=' +
           'com_honcodemembership&controller=honcodeseniority&task=' +
           'getSeniority&honconduct=' + code, function(data) {
-
-            // Show loyalty badge information
-            var tooltipLoyalty = '';
-            if (data.first_certification !== 0) {
-              tooltipLoyalty =
-                chrome.i18n.getMessage('since') + ' ' +
-                moment.unix(data.first_certification).format('ll');
-            }
-
-            $('#loyalty-badge').html(
-              '<div class="v-wrapper">' +
-              '<div class="img-seal" ' +
-              'data-toggle="tooltip" data-placement="bottom" title="' +
-              tooltipLoyalty + '">' +
-              '<div class="wrapper-hon-year">' +
-              '<span class="hon-number-year">' + data.years + '</span>' +
-              '<span class="hon-text-year">' +
-              chrome.i18n.getMessage('years') +
-              '</span>' +
-              '</div></div>' +
-              '</div>' +
-              '<p class="sub-wrapper">' + chrome.i18n.getMessage('loyalty') +
-              '</p>'
-            );
-
-            // Show HONCode seal badge
-            var validity = 'HONcode';
-            if (data.validity > 0) {
-              // Calculate Expiration Date
-              var day = moment.unix(data.validity);
-              validity = chrome.i18n.getMessage('validUntil') + ' ' +
-              day.format('MMM YYYY');
-            }
-
-            $('#seal-badge').html(
-              '<div class="v-wrapper">' +
-              '<img src="/images/honcode/hon-logo.png" alt="' +
-              chrome.i18n.getMessage('HonCodeCertified') +
-              '" data-toggle="tooltip" data-placement="bottom" title="' +
-              chrome.i18n.getMessage('HonCodeCertified') + '">' +
-              '</div>' +
-              '<p class="sub-wrapper">' + validity + '</p>'
-            );
-
-            // Show country
-            if (data.country) {
-              $('#country').html(
-                '<div class="v-wrapper">' +
-                '<span class="flag flag-' + data.country.toLowerCase() +
-                ' flag-size" ' +
-                'data-toggle="tooltip" data-placement="bottom" title="' +
-                chrome.i18n.getMessage(data.country.toUpperCase()) + '">' +
-                '</span>' +
-                '</div>' +
-                '<p class="sub-wrapper">' +
-                chrome.i18n.getMessage('country') +
-                '</p>'
-              );
-            }
-
-            // Show type
-            var type = data.type;
-            var icon;
-            switch (data.type) {
-              case 'Non-profit': {
-                type = 'NonProfit';
-                icon = '<i class="fa fa-circle fa-stack-2x white"></i>' +
-                  '<i class="fa fa-ban fa-stack-2x silver"></i>' +
-                  '<i class="fa fa-usd fa-stack-1x grey"></i>';
-                break;
-              }
-              case 'Individual': {
-                icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
-                  '<i class="fa fa-user fa-stack-1x white"></i>';
-                break;
-              }
-              case 'Commercial': {
-                icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
-                  '<i class="fa fa-usd fa-stack-1x white"></i>';
-                break;
-              }
-              case 'Military': {
-                icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
-                  '<i class="fa fa-shield fa-stack-1x white"></i>';
-                break;
-              }
-              case 'Network': {
-                icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
-                  '<i class="fa fa-sitemap fa-stack-1x white"></i>';
-                break;
-              }
-              case 'Government': {
-                icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
-                  '<i class="fa fa-institution fa-stack-1x white"></i>';
-                break;
-              }
-              case 'Organization': {
-                icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
-                  '<i class="fa fa-users fa-stack-1x white"></i>';
-                break;
-              }
-              case 'Educational': {
-                icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
-                  '<i class="fa fa-graduation-cap fa-stack-1x white"></i>';
-                break;
-              }
-              default: {
-                type = 'Unknown';
-                icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
-                  '<i class="fa fa-question fa-stack-1x white"></i>';
-              }
-            }
-            $('#type').html(
-              '<div class="v-wrapper">' +
-              '<span class="fa-stack fa-3x type-height" ' +
-              'data-toggle="tooltip" data-placement="bottom" title="' +
-              chrome.i18n.getMessage(type) + '">' +
-              icon +
-              '</span>' +
-              '</div>' +
-              '<p class="sub-wrapper">' +
-              chrome.i18n.getMessage('websiteType') +
-              '</p>'
-            );
-
-            // Show popularity
-            $('#popularity').html(
-              '<div class="v-wrapper">' +
-              '<span class="popularity-pos fa-stack fa-5x"  ' +
-              'data-toggle="tooltip" data-placement="bottom" title="' +
-              chrome.i18n.getMessage('alexaRank') + ': ' +
-              data.alexa_rank.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + '">' +
-              '<i class="fa fa-signal signal-normal"></i>' +
-              '<div class="signal signal-' + data.popularity + '">' +
-              '<i class="fa fa-signal signal-success"></i>' +
-              '</div>' +
-              '</span>' +
-              '</div>' +
-              '<p class="sub-wrapper">' +
-              chrome.i18n.getMessage('popularity') +
-              '</p>'
-            );
-
+            honcode.setSealBadge(data);
+            honcode.setLoyaltyBadge(data);
+            honcode.setPopularityBadge(data);
+            honcode.setCountryBadge(data);
+            honcode.setTypeBadge(data);
             $('[data-toggle="tooltip"]').tooltip();
           });
         $('#view-certificate').html(
@@ -197,5 +59,152 @@ var honcode = {
         $('#certification-header').html(chrome.i18n.getMessage('uncertified'));
       }
     });
+  },
+
+  setLoyaltyBadge: function(data) {
+    var tooltipLoyalty = '';
+    if (data.first_certification !== 0) {
+      tooltipLoyalty =
+        chrome.i18n.getMessage('since') + ' ' +
+        moment.unix(data.first_certification).format('ll');
+    }
+
+    $('#loyalty-badge').html(
+      '<div class="v-wrapper">' +
+      '<div class="img-seal" ' +
+      'data-toggle="tooltip" data-placement="bottom" title="' +
+      tooltipLoyalty + '">' +
+      '<div class="wrapper-hon-year">' +
+      '<span class="hon-number-year">' + data.years + '</span>' +
+      '<span class="hon-text-year">' +
+      chrome.i18n.getMessage('years') +
+      '</span>' +
+      '</div></div>' +
+      '</div>' +
+      '<p class="sub-wrapper">' + chrome.i18n.getMessage('loyalty') +
+      '</p>'
+    );
+  },
+
+  setSealBadge: function(data) {
+    var validity = 'HONcode';
+    if (data.validity > 0) {
+      // Calculate Expiration Date
+      var day = moment.unix(data.validity);
+      validity = chrome.i18n.getMessage('validUntil') + ' ' +
+      day.format('MMM YYYY');
+    }
+
+    $('#seal-badge').html(
+      '<div class="v-wrapper">' +
+      '<img src="/images/honcode/hon-logo.png" alt="' +
+      chrome.i18n.getMessage('HonCodeCertified') +
+      '" data-toggle="tooltip" data-placement="bottom" title="' +
+      chrome.i18n.getMessage('HonCodeCertified') + '">' +
+      '</div>' +
+      '<p class="sub-wrapper">' + validity + '</p>'
+    );
+  },
+
+  setCountryBadge: function(data) {
+    if (data.country) {
+      $('#country').html(
+        '<div class="v-wrapper">' +
+        '<span class="flag flag-' + data.country.toLowerCase() +
+        ' flag-size" ' +
+        'data-toggle="tooltip" data-placement="bottom" title="' +
+        chrome.i18n.getMessage(data.country.toUpperCase()) + '">' +
+        '</span>' +
+        '</div>' +
+        '<p class="sub-wrapper">' +
+        chrome.i18n.getMessage('country') +
+        '</p>'
+      );
+    }
+  },
+
+  setTypeBadge: function(data) {
+    var type = data.type;
+    var icon;
+    switch (data.type) {
+      case 'Non-profit': {
+        type = 'NonProfit';
+        icon = '<i class="fa fa-circle fa-stack-2x white"></i>' +
+          '<i class="fa fa-ban fa-stack-2x silver"></i>' +
+          '<i class="fa fa-usd fa-stack-1x grey"></i>';
+        break;
+      }
+      case 'Individual': {
+        icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
+          '<i class="fa fa-user fa-stack-1x white"></i>';
+        break;
+      }
+      case 'Commercial': {
+        icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
+          '<i class="fa fa-usd fa-stack-1x white"></i>';
+        break;
+      }
+      case 'Military': {
+        icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
+          '<i class="fa fa-shield fa-stack-1x white"></i>';
+        break;
+      }
+      case 'Network': {
+        icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
+          '<i class="fa fa-sitemap fa-stack-1x white"></i>';
+        break;
+      }
+      case 'Government': {
+        icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
+          '<i class="fa fa-institution fa-stack-1x white"></i>';
+        break;
+      }
+      case 'Organization': {
+        icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
+          '<i class="fa fa-users fa-stack-1x white"></i>';
+        break;
+      }
+      case 'Educational': {
+        icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
+          '<i class="fa fa-graduation-cap fa-stack-1x white"></i>';
+        break;
+      }
+      default: {
+        type = 'Unknown';
+        icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
+          '<i class="fa fa-question fa-stack-1x white"></i>';
+      }
+    }
+    $('#type').html(
+      '<div class="v-wrapper">' +
+      '<span class="fa-stack fa-3x type-height" ' +
+      'data-toggle="tooltip" data-placement="bottom" title="' +
+      chrome.i18n.getMessage(type) + '">' +
+      icon +
+      '</span>' +
+      '</div>' +
+      '<p class="sub-wrapper">' +
+      chrome.i18n.getMessage('websiteType') +
+      '</p>'
+    );
+  },
+
+  setPopularityBadge: function(data) {
+    $('#popularity').html(
+      '<div class="v-wrapper">' +
+      '<span class="popularity-pos fa-stack fa-5x"  ' +
+      'data-toggle="tooltip" data-placement="bottom" title="' +
+      chrome.i18n.getMessage('alexaRank') + ': ' +
+      data.alexa_rank.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + '">' +
+      '<i class="fa fa-signal signal-normal"></i>' +
+      '<div class="signal signal-' + data.popularity + '">' +
+      '<i class="fa fa-signal signal-success"></i>' +
+      '</div>' +
+      '</span>' +
+      '</div>' +
+      '<p class="sub-wrapper">' +
+      chrome.i18n.getMessage('popularity') +
+      '</p>'
+    );
   },
 };
