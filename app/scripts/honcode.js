@@ -33,7 +33,10 @@ var honcode = {
 
   setBadges: function(link) {
     hon_listHON.checkURL(hon_listHON.formatHREF(link)).then(function(code) {
-      $('#certification-domain').html(honcode.getDomainFromUrl(link));
+      var prettyLink = honcode.getDomainFromUrl(link);
+      if (prettyLink !== 'null.null') {
+        $('#certification-domain').html(prettyLink);
+      }
       if (code !== '' && code !== undefined) {
         $('#certification').addClass('certification-green');
         $('#certification-header').html(chrome.i18n.getMessage('certified'));
