@@ -103,20 +103,66 @@ var honcode = {
 
             // Show type
             var type = data.type;
-            if (data.type === 'Non-profit') {
-              type = 'NonProfit';
-            }
-            if (!data.type) {
-              type = 'Unknown';
+            var icon;
+            switch (data.type) {
+              case 'Non-profit': {
+                type = 'NonProfit';
+                icon = '<i class="fa fa-circle fa-stack-2x white"></i>' +
+                  '<i class="fa fa-ban fa-stack-2x silver"></i>' +
+                  '<i class="fa fa-usd fa-stack-1x grey"></i>';
+                break;
+              }
+              case 'Individual': {
+                icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
+                  '<i class="fa fa-user fa-stack-1x white"></i>';
+                break;
+              }
+              case 'Commercial': {
+                icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
+                  '<i class="fa fa-usd fa-stack-1x white"></i>';
+                break;
+              }
+              case 'Military': {
+                icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
+                  '<i class="fa fa-shield fa-stack-1x white"></i>';
+                break;
+              }
+              case 'Network': {
+                icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
+                  '<i class="fa fa-sitemap fa-stack-1x white"></i>';
+                break;
+              }
+              case 'Government': {
+                icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
+                  '<i class="fa fa-institution fa-stack-1x white"></i>';
+                break;
+              }
+              case 'Organization': {
+                icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
+                  '<i class="fa fa-users fa-stack-1x white"></i>';
+                break;
+              }
+              case 'Educational': {
+                icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
+                  '<i class="fa fa-graduation-cap fa-stack-1x white"></i>';
+                break;
+              }
+              default: {
+                type = 'Unknown';
+                icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
+                  '<i class="fa fa-question fa-stack-1x white"></i>';
+              }
             }
             $('#type').html(
               '<div class="v-wrapper">' +
-              '<i class="fa fa-cubes fa-5x type-height" ' +
-              'data-toggle="tooltip" data-placement="bottom" title="' +
-              chrome.i18n.getMessage(type) + '"></i>' +
+              '<span class="fa-stack fa-3x type-height" ' +
+              'data-toggle="tooltip" data-placement="top" title="' +
+              chrome.i18n.getMessage(type) + '">' +
+              icon +
+              '</span>' +
               '</div>' +
               '<p class="sub-wrapper">' +
-              chrome.i18n.getMessage(type) +
+              chrome.i18n.getMessage('websiteType') +
               '</p>'
             );
 
