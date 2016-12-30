@@ -156,7 +156,7 @@ var honcode = {
             $('#type').html(
               '<div class="v-wrapper">' +
               '<span class="fa-stack fa-3x type-height" ' +
-              'data-toggle="tooltip" data-placement="top" title="' +
+              'data-toggle="tooltip" data-placement="bottom" title="' +
               chrome.i18n.getMessage(type) + '">' +
               icon +
               '</span>' +
