@@ -7,7 +7,8 @@
     "bootstrap": "^3.3.7",
     "moment": "^2.17.1",
     "flag-css": "^0.0.7",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "country-code": "umpirsky/country-list#2.0.2"
   },
   "homepage": "https://github.com/healthonnet/hon-honcode-extension",
   "license": "Apache",

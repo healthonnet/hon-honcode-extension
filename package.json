@@ -29,10 +29,12 @@
     "gulp-jshint": "~2.0.0",
     "gulp-livereload": "^3.8.1",
     "gulp-load-plugins": "^0.10.0",
+    "gulp-merge-json": "^0.6.0",
     "gulp-minify-css": "^1.2.1",
     "gulp-minify-html": "^1.0.0",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.0.0",
     "gulp-sass-vars": "^1.0.3",
     "gulp-size": "^1.2.1",
@@ -42,12 +44,13 @@
     "gulp-util": "~3.0.7",
     "gulp-zip": "^3.0.2",
     "jshint": "~2.9.1",
+    "lazypipe": "^1.0.1",
     "main-bower-files": "^2.5.0",
+    "merge-stream": "^1.0.1",
     "phantomjs-prebuilt": "^2.1.4",
     "run-sequence": "^1.1.4",
     "wiredep": "^2.2.2",
     "yargs": "^4.2.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

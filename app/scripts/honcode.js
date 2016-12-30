@@ -85,15 +85,20 @@ var honcode = {
             );
 
             // Show country
-            $('#country').html(
-              '<div class="v-wrapper">' +
-              '<span class="flag flag-' + data.country.toLowerCase() +
-              ' flag-size"></span>' +
-              '</div>' +
-              '<p class="sub-wrapper">' +
-              chrome.i18n.getMessage('country') +
-              '</p>'
-            );
+            if (data.country) {
+              $('#country').html(
+                '<div class="v-wrapper">' +
+                '<span class="flag flag-' + data.country.toLowerCase() +
+                ' flag-size" ' +
+                'data-toggle="tooltip" data-placement="top" title="' +
+                chrome.i18n.getMessage(data.country.toUpperCase()) + '">' +
+                '</span>' +
+                '</div>' +
+                '<p class="sub-wrapper">' +
+                chrome.i18n.getMessage('country') +
+                '</p>'
+              );
+            }
 
             // Show type
             var type = data.type;

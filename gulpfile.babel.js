@@ -11,6 +11,10 @@ import jscs from 'gulp-jscs';
 import jshint from 'gulp-jshint';
 import download from 'gulp-download';
 import decompress from 'gulp-decompress';
+import mergeJson from 'gulp-merge-json';
+import mergeStream from 'merge-stream';
+import lazypipe from 'lazypipe';
+import replace from 'gulp-replace';
 
 const $ = gulpLoadPlugins();
 const argv = require('yargs').argv;
@@ -115,11 +119,49 @@ gulp.task('chromeManifest', () => {
   .pipe(argv.firefox ? gulp.dest('distFirefox') : gulp.dest('dist'));
 });
 
-gulp.task('lang', () => {
+gulp.task('locales', () => {
   return download('https://localise.biz:443/api/export/archive/json.zip?' +
     'key=dd5d1fa46f1ba7941659779f6423e38e&format=chrome')
     .pipe(decompress({strip: 1}))
     .pipe(argv.firefox ? gulp.dest('distFirefox') : gulp.dest('dist'));
+});
+
+var alterJson = lazypipe()
+  .pipe(replace, /("\w\w"):("[^"]*")/g, '$1: { "message": $2 }');
+
+gulp.task('lang-de', () => {
+  return mergeStream(gulp.src('./app/lib/country-code/data/de/country.json')
+    .pipe(alterJson()), gulp.src('dist/_locales/de/messages.json'))
+    .pipe(mergeJson('messages.json'))
+    .pipe(gulp.dest('dist/_locales/de'));
+});
+
+gulp.task('lang-en', () => {
+  return mergeStream(gulp.src('./app/lib/country-code/data/en/country.json')
+    .pipe(alterJson()), gulp.src('dist/_locales/en/messages.json'))
+    .pipe(mergeJson('messages.json'))
+    .pipe(gulp.dest('dist/_locales/en'));
+});
+
+gulp.task('lang-es', () => {
+  return mergeStream(gulp.src('./app/lib/country-code/data/es/country.json')
+    .pipe(alterJson()), gulp.src('dist/_locales/es/messages.json'))
+    .pipe(mergeJson('messages.json'))
+    .pipe(gulp.dest('dist/_locales/es'));
+});
+
+gulp.task('lang-fr', () => {
+  return mergeStream(gulp.src('./app/lib/country-code/data/fr/country.json')
+    .pipe(alterJson()), gulp.src('dist/_locales/fr/messages.json'))
+    .pipe(mergeJson('messages.json'))
+    .pipe(gulp.dest('dist/_locales/fr'));
+});
+
+gulp.task('lang-it', () => {
+  return mergeStream(gulp.src('./app/lib/country-code/data/it/country.json')
+    .pipe(alterJson()), gulp.src('dist/_locales/it/messages.json'))
+    .pipe(mergeJson('messages.json'))
+    .pipe(gulp.dest('dist/_locales/it'));
 });
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist', 'distFirefox']));
@@ -190,6 +232,17 @@ gulp.task('build', (cb) => {
     ['html', 'images', 'extras'],
     'chromeManifest', 'flags', 'fonts',
     'lang', 'size', cb);
+});
+
+gulp.task('lang', ['locales'], (cb) => {
+  runSequence(
+    'lang-de',
+    'lang-en',
+    'lang-es',
+    'lang-fr',
+    'lang-it',
+    cb
+  );
 });
 
 gulp.task('chrome-prod', ['clean'], (cb) => {
