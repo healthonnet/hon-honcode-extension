@@ -52,16 +52,16 @@
 
   <div class="search container">
     <h2 id="khresmoi"></h2>
-    <form action="http://everyone.khresmoi.eu/hon-search" class="row" method="get" target="_blank">
+    <form role="form" action="http://everyone.khresmoi.eu/hon-search" class="form-inline text-center" method="get" target="_blank">
       <input type="hidden" name="start" value="0">
       <input type="hidden" name="fq" value="docType:html">
       <input type="hidden" name="group.field" value="domain">
       <input type="hidden" name="overrideQ">
       <input type="hidden" name="searchLanguage" id="searchLanguage">
-      <div class="col-xs-10">
+      <div class="form-group">
         <input type="text" class="form-control" autocomplete="off" name="q" id="q">
       </div>
-      <div class="col-xs-2">
+      <div class="form-group">
         <button type="submit" class="btn btn-primary" id="searchSubmit"></button>
       </div>
     </form>

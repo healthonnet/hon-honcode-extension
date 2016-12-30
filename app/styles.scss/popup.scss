@@ -158,6 +158,15 @@ form {
   padding-top: 10px;
 }
 
+.form-inline .form-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+#q {
+  width: 330px;
+}
+
 .bottom {
   clear: both;
 }
