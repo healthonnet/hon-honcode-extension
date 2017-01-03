@@ -223,12 +223,12 @@ gulp.task('lang', ['locales'], (cb) => {
   );
 });
 
-gulp.task('package', () => {
+gulp.task('package', ['build'], () => {
   var browser = 'Chrome';
   if (argv.firefox) {
     browser = 'Firefox';
   }
-  var manifest = require(dest + '/manifest.json');
+  var manifest = require('./' + dest + '/manifest.json');
   del.sync([dest + '/README.txt', dest + '/**/*.map']);
   return gulp.src(dest + '/**')
       .pipe($.zip('HONcode-Toolbar-v' + manifest.version + '-' +
