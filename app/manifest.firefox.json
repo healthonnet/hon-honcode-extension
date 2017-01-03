@@ -33,7 +33,8 @@
       "48": "images/icon-invalid-48.png",
       "128": "images/icon-invalid-128.png"
     },
-    "default_title": "HONcode"
+    "default_title": "HONcode",
+    "default_popup": "popup.html"
   },
 
   "permissions": [

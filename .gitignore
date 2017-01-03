@@ -7,6 +7,5 @@ app/lib
 app/_locales
 test/bower_components
 package
-distFirefox
 app/styles
 .DS_Store
