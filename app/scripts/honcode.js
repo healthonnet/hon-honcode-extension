@@ -41,7 +41,7 @@ var honcode = {
         $('#certification').addClass('certification-green');
         $('#certification-header').html(chrome.i18n.getMessage('certified'));
         $.getJSON(
-          'https://dev.myhealthonnet.org/index.php/en/?option=' +
+          'https://www.myhealthonnet.org/index.php/en/?option=' +
           'com_honcodemembership&controller=honcodeseniority&task=' +
           'getSeniority&honconduct=' + code, function(data) {
             honcode.setSealBadge(data);
