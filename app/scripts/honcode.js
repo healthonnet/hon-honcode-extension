@@ -72,16 +72,21 @@ var honcode = {
         moment.unix(data.first_certification).format('ll');
     }
 
+    var years = '';
+    if (data.years > 0) {
+      years = data.years + '</span>' +
+      '<span class="hon-text-year">' +
+      chrome.i18n.getMessage('years') +
+      '</span>';
+    }
+
     $('#loyalty-badge').html(
       '<div class="v-wrapper">' +
       '<div class="img-seal" ' +
       'data-toggle="tooltip" data-placement="bottom" title="' +
       tooltipLoyalty + '">' +
       '<div class="wrapper-hon-year">' +
-      '<span class="hon-number-year">' + data.years + '</span>' +
-      '<span class="hon-text-year">' +
-      chrome.i18n.getMessage('years') +
-      '</span>' +
+      '<span class="hon-number-year">' +  years +
       '</div></div>' +
       '</div>' +
       '<p class="sub-wrapper">' + chrome.i18n.getMessage('loyalty') +
