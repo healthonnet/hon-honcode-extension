@@ -11,7 +11,7 @@ var medlinePage = 'Verify selectors in ' +
 
 
 // Google
-casper.test.begin(googleSearch, 3, function suite(test) {
+casper.test.begin(googleSearch, 2, function suite(test) {
 
   casper.start('http://www.google.fr/', function() {
     test.assertExists('form[action="/search"]', 'main form is found');
@@ -23,7 +23,6 @@ casper.test.begin(googleSearch, 3, function suite(test) {
   });
 
   casper.then(function() {
-    test.assertTitle('vidal - Recherche Google', 'google title is ok');
     test.assertUrlMatch(/q=vidal/, 'search term has been submitted');
   });
 
@@ -33,7 +32,7 @@ casper.test.begin(googleSearch, 3, function suite(test) {
 });
 
 // Yahoo
-casper.test.begin(yahooSearch, 4, function suite(test) {
+casper.test.begin(yahooSearch, 3, function suite(test) {
 
   casper.start('https://fr.yahoo.com/', function() {
     test.assertExists(
@@ -48,7 +47,6 @@ casper.test.begin(yahooSearch, 4, function suite(test) {
   });
 
   casper.then(function() {
-    test.assertTitle('vidal - Yahoo Search - Actualités', 'yahoo title is ok');
     test.assertUrlMatch(/p=vidal/, 'search term has been submitted');
   });
 
@@ -58,7 +56,7 @@ casper.test.begin(yahooSearch, 4, function suite(test) {
 });
 
 // Bing
-casper.test.begin(bingSearch, 3, function suite(test) {
+casper.test.begin(bingSearch, 2, function suite(test) {
 
   casper.start('https://www.bing.com/', function() {
     test.assertExists('form[action="/search"]', 'main form is found');
@@ -69,7 +67,6 @@ casper.test.begin(bingSearch, 3, function suite(test) {
   });
 
   casper.then(function() {
-    test.assertTitle('vidal - Bing', 'bing title is ok');
     test.assertUrlMatch(/q=vidal/, 'search term has been submitted');
   });
 
@@ -79,7 +76,7 @@ casper.test.begin(bingSearch, 3, function suite(test) {
 });
 
 // Wikipedia
-casper.test.begin(wikiPage, 2, function suite(test) {
+casper.test.begin(wikiPage, 1, function suite(test) {
 
   casper.start('https://en.wikipedia.org/', function() {
     test.assertExists('form[action="/w/index.php"]', 'main form is found');
@@ -89,24 +86,17 @@ casper.test.begin(wikiPage, 2, function suite(test) {
     this.waitForSelector('a.external.text');
   });
 
-  casper.then(function() {
-    test.assertTitle('WebMD - Wikipedia', 'wikipedia title is ok');
-  });
-
   casper.run(function() {
     test.done();
   });
 });
 
 // MedlinePlus
-casper.test.begin(medlinePage, 1, function suite(test) {
+casper.test.begin(medlinePage, 0, function suite(test) {
 
   casper.start('https://medlineplus.gov/triglycerides.html',
     function() {
     this.waitForSelector('a.reveal');
-  });
-  casper.then(function() {
-    test.assertTitle('Triglycerides | MedlinePlus', 'medline plus title is ok');
   });
   casper.run(function() {
     test.done();
