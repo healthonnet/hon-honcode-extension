@@ -106,7 +106,7 @@ casper.test.begin(medlinePage, 1, function suite(test) {
     this.waitForSelector('a.reveal');
   });
   casper.then(function() {
-    test.assertTitle('Triglycerides: MedlinePlus', 'medline plus title is ok');
+    test.assertTitle('Triglycerides | MedlinePlus', 'medline plus title is ok');
   });
   casper.run(function() {
     test.done();
