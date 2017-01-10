@@ -59,9 +59,8 @@ var hon_hash =
     if (typeof (inValue) != 'undefined') {
       this.items[inKey] = inValue;
     } else {
-      dump('HON Error in Hash.setItem() : in_value is type \'undefined\'');
-      Components.utils.reportError('HON Error in Hash.setItem() : ' +
-        'in_value is type \'undefined\'');
+      console.error('HON Error in Hash.setItem() :' +
+        ' in_value is type \'undefined\'');
     }
     return inValue;
   },
@@ -74,9 +73,8 @@ var hon_hash =
     if (typeof (tab) != 'undefined') {
       chrome.storage.local.set({hash: tab});
     } else {
-      dump('HON Error in Hash.saveHash() : tab is type \'undefined\'');
-      Components.utils.reportError('HON Error in Hash.saveHash() : ' +
-        'tab is type \'undefined\'');
+      console.error('HON Error in Hash.saveHash() :' +
+        ' tab is type \'undefined\'');
     }
   },
 };
