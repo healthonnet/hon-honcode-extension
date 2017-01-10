@@ -45,9 +45,10 @@ var hon_listHON =
           }
         }
       } catch (e) {
-        dump(' hon_listHON.load: failed with ' + e + '\n');
+        console.error(' hon_listHON.load: ' +
+          'failed with ' + e + '\n');
       }
-    }
+    };
 
     // Termine la requete XMLHttpRequest
     hon_list.send(null);
