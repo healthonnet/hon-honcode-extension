@@ -1,7 +1,7 @@
 {
   "name": "hon-honcode-extension",
   "private": true,
-  "version": "2.0.2",
+  "version": "2.1.1",
   "dependencies": {
     "jquery": "^2.2.0",
     "bootstrap": "^3.3.7",
