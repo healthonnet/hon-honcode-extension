@@ -1,6 +1,12 @@
 HONcode Toolbar Changelog
 =========================
 
+### v2.1.1 / 2017-01-12
+ - chore: clean unit test
+ - chore: clean dump call to console.error
+ - chore: move jQuery out of bundle in popup
+ - fix: missing reportError methods
+
 ### v2.1.0 / 2017-01-05
  - fix: tabs.getSelected was deprecated
  - chore: clean unnecessary file dependencies
