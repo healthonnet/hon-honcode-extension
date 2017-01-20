@@ -15,7 +15,7 @@
 var hon_listHON =
 {
   // Url de la liste des sites certifies
-  url: 'https://www.hon.ch/HONcode/Plugin/listeMD5.txt',
+  url: 'https://www.honcode.ch/HONcode/Plugin/listeMD5.txt',
 
   // Initialisation de la HashMap
   initSiteList: false,
