@@ -116,17 +116,19 @@ var honcode = {
 
   setCountryBadge: function(data) {
     if (data.country) {
-      $('#country').html(
-        '<div class="v-wrapper">' +
-        '<span class="flag flag-' + data.country.toLowerCase() +
-        ' flag-size" ' +
-        'data-toggle="tooltip" data-placement="bottom" title="' +
-        chrome.i18n.getMessage(data.country.toUpperCase()) + '">' +
-        '</span>' +
-        '</div>' +
-        '<p class="sub-wrapper">' +
-        chrome.i18n.getMessage('country') +
-        '</p>'
+      $('#country').append(
+        $('<div>', {class: 'v-wrapper'}).append(
+          $('<span>', {
+            class: 'flag flag-' + data.country.toLowerCase() + ' flag-size',
+            'data-toggle': 'tooltip',
+            'data-placement': 'bottom',
+            title: chrome.i18n.getMessage(data.country.toUpperCase()),
+          })
+        ).append(
+          $('<p>', {class: 'sub-wrapper'}).text(
+            chrome.i18n.getMessage('country')
+          )
+        )
       );
     }
   },
