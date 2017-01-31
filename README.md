@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="HONcode Toolbar" src="https://raw.githubusercontent.com/healthonnet/hon-honcode-extension/master/assets/readme-logo.png">
+  <img alt="HONcode Toolbar" src="https://raw.githubusercontent.com/healthonnet/hon-honcode-extension/master/assets/github/readme-logo.png">
 </p>
 
 <p align="center">
