@@ -198,21 +198,26 @@ var honcode = {
   },
 
   setPopularityBadge: function(data) {
-    $('#popularity').html(
-      '<div class="v-wrapper">' +
-      '<span class="popularity-pos fa-stack fa-5x"  ' +
-      'data-toggle="tooltip" data-placement="bottom" title="' +
-      chrome.i18n.getMessage('alexaRank') + ': ' +
-      data.alexa_rank.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + '">' +
-      '<i class="fa fa-signal signal-normal"></i>' +
-      '<div class="signal signal-' + data.popularity + '">' +
-      '<i class="fa fa-signal signal-success"></i>' +
-      '</div>' +
-      '</span>' +
-      '</div>' +
-      '<p class="sub-wrapper">' +
-      chrome.i18n.getMessage('popularity') +
-      '</p>'
+    $('#popularity').append(
+      $('<div>', {class: 'v-wrapper'}).append(
+        $('<span>', {
+          class: 'popularity-pos fa-stack fa-5x',
+          'data-toggle': 'tooltip',
+          'data-placement': 'bottom',
+          title: chrome.i18n.getMessage('alexaRank') + ': ' +
+            data.alexa_rank.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '),
+        }).append(
+          $('<i>', {class: 'fa fa-signal signal-normal'})
+        ).append(
+          $('<div>', {class: 'signal signal-' + data.popularity }).append(
+            $('<i>', {class: 'fa fa-signal signal-success'})
+          )
+        )
+      ).append(
+        $('<p>', {class: 'sub-wrapper'}).text(
+          chrome.i18n.getMessage('popularity')
+        )
+      )
     );
   },
 };
