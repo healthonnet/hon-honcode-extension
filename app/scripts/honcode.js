@@ -103,14 +103,18 @@ var honcode = {
       day.format('MMM YYYY');
     }
 
-    $('#seal-badge').html(
-      '<div class="v-wrapper">' +
-      '<img src="/images/honcode/hon-logo.png" alt="' +
-      chrome.i18n.getMessage('HonCodeCertified') +
-      '" data-toggle="tooltip" data-placement="bottom" title="' +
-      chrome.i18n.getMessage('HonCodeCertified') + '">' +
-      '</div>' +
-      '<p class="sub-wrapper">' + validity + '</p>'
+    $('#seal-badge').append(
+      $('<div>', {class: 'v-wrapper'}).append(
+        $('<img>', {
+          src: '/images/honcode/hon-logo.png',
+          alt: chrome.i18n.getMessage('HonCodeCertified'),
+          'data-toggle': 'tooltip',
+          'data-placement': 'bottom',
+          title: chrome.i18n.getMessage('HonCodeCertified'),
+        })
+      ).append(
+        $('<p>', {class: 'sub-wrapper'}).text(validity)
+      )
     );
   },
 
