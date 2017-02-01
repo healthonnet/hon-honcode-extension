@@ -74,23 +74,28 @@ var honcode = {
 
     var years = '';
     if (data.years > 0) {
-      years = data.years + '</span>' +
-      '<span class="hon-text-year">' +
-      chrome.i18n.getMessage('years') +
-      '</span>';
+      years = $('<span>', {class: 'hon-number-year'}).text(data.years).append(
+        $('<span>', {class: 'hon-text-year'}).text(
+          chrome.i18n.getMessage('years')
+        )
+      );
     }
 
-    $('#loyalty-badge').html(
-      '<div class="v-wrapper">' +
-      '<div class="img-seal" ' +
-      'data-toggle="tooltip" data-placement="bottom" title="' +
-      tooltipLoyalty + '">' +
-      '<div class="wrapper-hon-year">' +
-      '<span class="hon-number-year">' +  years +
-      '</div></div>' +
-      '</div>' +
-      '<p class="sub-wrapper">' + chrome.i18n.getMessage('loyalty') +
-      '</p>'
+    $('#loyalty-badge').append(
+      $('<div>', {class: 'v-wrapper'}).append(
+        $('<div>', {
+          class: 'img-seal',
+          'data-toggle': 'tooltip',
+          'data-placement': 'bottom',
+          title: tooltipLoyalty,
+        }).append(
+          $('<div>', {class: 'wrapper-hon-year'}).append(years)
+        )
+      )
+    ).append(
+      $('<p>', {class: 'sub-wrapper'}).text(
+        chrome.i18n.getMessage('loyalty')
+      )
     );
   },
 
