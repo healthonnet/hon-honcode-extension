@@ -148,63 +148,65 @@ var honcode = {
     switch (data.type) {
       case 'Non-profit': {
         type = 'NonProfit';
-        icon = '<i class="fa fa-circle fa-stack-2x white"></i>' +
-          '<i class="fa fa-ban fa-stack-2x silver"></i>' +
-          '<i class="fa fa-usd fa-stack-1x grey"></i>';
+        icon = $('<i>', {class: 'fa fa-circle fa-stack-2x white'}).add(
+           $('<i>', {class: 'fa fa-ban fa-stack-2x silver'})).add(
+             $('<i>', {class: 'fa fa-usd fa-stack-1x grey'}));
         break;
       }
       case 'Individual': {
-        icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
-          '<i class="fa fa-user fa-stack-1x white"></i>';
+        icon = $('<i>', {class: 'fa fa-circle fa-stack-2x grey'}).add(
+           $('<i>', {class: 'fa fa-user fa-stack-1x white'}));
         break;
       }
       case 'Commercial': {
-        icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
-          '<i class="fa fa-usd fa-stack-1x white"></i>';
+        icon = $('<i>', {class: 'fa fa-circle fa-stack-2x grey'}).add(
+           $('<i>', {class: 'fa fa-usd fa-stack-1x white'}));
         break;
       }
       case 'Military': {
-        icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
-          '<i class="fa fa-shield fa-stack-1x white"></i>';
+        icon = $('<i>', {class: 'fa fa-circle fa-stack-2x grey'}).add(
+           $('<i>', {class: 'fa fa-shield fa-stack-1x white'}));
         break;
       }
       case 'Network': {
-        icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
-          '<i class="fa fa-sitemap fa-stack-1x white"></i>';
+        icon = $('<i>', {class: 'fa fa-circle fa-stack-2x grey'}).add(
+           $('<i>', {class: 'fa fa-sitemap fa-stack-1x white'}));
         break;
       }
       case 'Government': {
-        icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
-          '<i class="fa fa-institution fa-stack-1x white"></i>';
+        icon = $('<i>', {class: 'fa fa-circle fa-stack-2x grey'}).add(
+           $('<i>', {class: 'fa fa-institution fa-stack-1x white'}));
         break;
       }
       case 'Organization': {
-        icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
-          '<i class="fa fa-users fa-stack-1x white"></i>';
+        icon = $('<i>', {class: 'fa fa-circle fa-stack-2x grey'}).add(
+           $('<i>', {class: 'fa fa-users fa-stack-1x white'}));
         break;
       }
       case 'Educational': {
-        icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
-          '<i class="fa fa-graduation-cap fa-stack-1x white"></i>';
+        icon = $('<i>', {class: 'fa fa-circle fa-stack-2x grey'}).add(
+           $('<i>', {class: 'fa fa-graduation-cap fa-stack-1x white'}));
         break;
       }
       default: {
         type = 'Unknown';
-        icon = '<i class="fa fa-circle fa-stack-2x grey"></i>' +
-          '<i class="fa fa-question fa-stack-1x white"></i>';
+        icon = $('<i>', {class: 'fa fa-circle fa-stack-2x grey'}).add(
+           $('<i>', {class: 'fa fa-question fa-stack-1x white'}));
       }
     }
-    $('#type').html(
-      '<div class="v-wrapper">' +
-      '<span class="fa-stack fa-3x type-height" ' +
-      'data-toggle="tooltip" data-placement="bottom" title="' +
-      chrome.i18n.getMessage(type) + '">' +
-      icon +
-      '</span>' +
-      '</div>' +
-      '<p class="sub-wrapper">' +
-      chrome.i18n.getMessage('websiteType') +
-      '</p>'
+    $('#type').append(
+      $('<div>', {class: 'v-wrapper'}).append(
+        $('<span>', {
+          class: 'fa-stack fa-3x type-height',
+          'data-toggle': 'tooltip',
+          'data-placement': 'bottom',
+          title: chrome.i18n.getMessage(type),
+        }).append(icon)
+      )
+    ).append(
+      $('<p>', {class: 'sub-wrapper'}).text(
+        chrome.i18n.getMessage('websiteType')
+      )
     );
   },
 
