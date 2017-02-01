@@ -35,7 +35,7 @@ var honcode = {
     hon_listHON.checkURL(hon_listHON.formatHREF(link)).then(function(code) {
       var prettyLink = honcode.getDomainFromUrl(link);
       if (prettyLink !== 'null.null') {
-        $('#certification-domain').html(prettyLink);
+        $('#certification-domain').text(prettyLink);
       }
       if (code !== '' && code !== undefined) {
         $('#certification').addClass('certification-green');
@@ -51,15 +51,15 @@ var honcode = {
             honcode.setTypeBadge(data);
             $('[data-toggle="tooltip"]').tooltip();
           });
-        $('#view-certificate').html(
-          '<a href="https://www.hon.ch/HONcode/Conduct.html?' +
-          code +
-          '" target="_blank">' +
-          chrome.i18n.getMessage('viewCertificate') + '</a>'
+        $('#view-certificate').append(
+          $('<a>', {
+            href: 'https://www.hon.ch/HONcode/Conduct.html?' + code,
+            target: '_blank',
+          }).text(chrome.i18n.getMessage('viewCertificate'))
         );
       } else {
         $('#certification').addClass('certification-grey');
-        $('#certification-header').html(chrome.i18n.getMessage('uncertified'));
+        $('#certification-header').text(chrome.i18n.getMessage('uncertified'));
       }
     });
   },
