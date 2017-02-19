@@ -59,6 +59,12 @@ Developers
 * Pierre REPETTO-ANDIPATIN
 * William BELLE
 
+Contributors
+------------
+
+* Aude CABRERA
+* Marko MACKIC
+
 License
 -------
 
