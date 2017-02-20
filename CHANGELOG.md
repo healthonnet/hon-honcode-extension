@@ -1,6 +1,15 @@
 HONcode Toolbar Changelog
 =========================
 
+### v2.2.0 / 2017-02-28
+ - feat: rewrite DOM trees creation (avoid invoking the DOM parser)
+ - feat: add donate link in footer
+ - fix: popup layout with empty domain
+ - fix: update some translations
+ - chore: update md5 list url
+ - chore: add contributors list in README
+ - chore: add small promo image for chrome store
+
 ### v2.1.1 / 2017-01-12
  - chore: clean unit test
  - chore: clean dump call to console.error
