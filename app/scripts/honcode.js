@@ -5,36 +5,33 @@ var honcode = {
     chrome.cookies.getAll(
       {url: domain},
       function(cookies) {
+        var cookiedensity = '';
+        if (cookies.length === 0) {
+          cookiedensity = 'no';
+        } else if (cookies.length > 0 && cookies.length < 11) {
+          cookiedensity = 'few';
+        } else if (cookies.length > 10 && cookies.length < 21) {
+          cookiedensity = 'more';
+        } else if (cookies.length > 50) {
+          cookiedensity = 'max';
+        } else {
+          cookiedensity = 'max';
+        }
         $('#cookie-badge').append(
           $('<div>', {class: 'v-wrapper'}).append(
             $('<img>', {
-              src: '/images/honcode/hon-logo.png',
-              alt: chrome.i18n.getMessage('HonCodeCertified'),
+              src: '/images/badge_cook_' + cookiedensity + '.jpg',
+              alt: chrome.i18n.getMessage(cookiedensity + 'cookies'),
               'data-toggle': 'tooltip',
               'data-placement': 'bottom',
-              title: chrome.i18n.getMessage('HonCodeCertified'),
+              title: chrome.i18n.getMessage(cookiedensity + 'cookies'),
             })
           ).append(
-            $('<p>', {class: 'sub-wrapper'}).text('lolilolTODO')
+            $('<p>', {class: 'sub-wrapper'}).text(
+              chrome.i18n.getMessage('cookies')
+            )
           )
         );
-        console.log('switch'+cookies.length);
-        switch (true) {
-          case (cookies.length === 0):
-            console.log('lol0');
-            break;
-          case (cookies.length > 0 && cookies.length < 11):
-            console.log('lol10');
-            break;
-          case (cookies.length > 10 && cookies.length < 21):
-            console.log('lol20');
-            break;
-          case (cookies.length > 50):
-            console.log('lolmax');
-            break;
-          default:
-            console.log('ERRLOL');
-        }
       }
     );
   },
