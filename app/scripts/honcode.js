@@ -1,6 +1,43 @@
 'use strict';
 
 var honcode = {
+  setCookiesBadge: function(domain,callback) {
+    chrome.cookies.getAll(
+      {url: domain},
+      function(cookies) {
+        $('#cookie-badge').append(
+          $('<div>', {class: 'v-wrapper'}).append(
+            $('<img>', {
+              src: '/images/honcode/hon-logo.png',
+              alt: chrome.i18n.getMessage('HonCodeCertified'),
+              'data-toggle': 'tooltip',
+              'data-placement': 'bottom',
+              title: chrome.i18n.getMessage('HonCodeCertified'),
+            })
+          ).append(
+            $('<p>', {class: 'sub-wrapper'}).text('lolilolTODO')
+          )
+        );
+        console.log('switch'+cookies.length);
+        switch (true) {
+          case (cookies.length === 0):
+            console.log('lol0');
+            break;
+          case (cookies.length > 0 && cookies.length < 11):
+            console.log('lol10');
+            break;
+          case (cookies.length > 10 && cookies.length < 21):
+            console.log('lol20');
+            break;
+          case (cookies.length > 50):
+            console.log('lolmax');
+            break;
+          default:
+            console.log('ERRLOL');
+        }
+      }
+    );
+  },
   getDomainFromUrl: function(link) {
     var domain = tldjs.getDomain(link);
     var subdomain = tldjs.getSubdomain(link);

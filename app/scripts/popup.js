@@ -21,4 +21,5 @@ chrome.tabs.query(query, function(tabs) {
     )
   );
   honcode.setBadges(currentTab.url);
+  honcode.setCookiesBadge(currentTab.url);
 });
