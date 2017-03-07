@@ -8,9 +8,9 @@ var honcode = {
         var cookiedensity = '';
         if (cookies.length === 0) {
           cookiedensity = 'no';
-        } else if (cookies.length > 0 && cookies.length < 11) {
+        } else if (cookies.length > 0 && cookies.length < 21) {
           cookiedensity = 'few';
-        } else if (cookies.length > 10 && cookies.length < 21) {
+        } else if (cookies.length > 20 && cookies.length < 51) {
           cookiedensity = 'more';
         } else if (cookies.length > 50) {
           cookiedensity = 'max';
