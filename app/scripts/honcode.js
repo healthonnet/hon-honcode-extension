@@ -1,5 +1,6 @@
 'use strict';
-
+FEWCOOKIES = 20;
+MORECOOKIES = 50;
 var honcode = {
   setCookiesBadge: function(domain,callback) {
     chrome.cookies.getAll(
@@ -8,13 +9,11 @@ var honcode = {
         var cookiedensity = '';
         if (cookies.length === 0) {
           cookiedensity = 'no';
-        } else if (cookies.length > 0 && cookies.length < 21) {
+        } else if (cookies.length > 0 && cookies.length <= FEWCOOKIES) {
           cookiedensity = 'few';
-        } else if (cookies.length > 20 && cookies.length < 51) {
+        } else if (cookies.length > FEWCOOKIES && cookies.length <= MORECOOKIES) {
           cookiedensity = 'more';
-        } else if (cookies.length > 50) {
-          cookiedensity = 'max';
-        } else {
+        } else if (cookies.length > MORECOOKIES) {
           cookiedensity = 'max';
         }
         $('#cookie-badge').append(
@@ -24,11 +23,11 @@ var honcode = {
               alt: chrome.i18n.getMessage(cookiedensity + 'cookies'),
               'data-toggle': 'tooltip',
               'data-placement': 'bottom',
-              title: chrome.i18n.getMessage(cookiedensity + 'cookies'),
+              title: cookies.length + ' ' + chrome.i18n.getMessage('cookies'),
             })
           ).append(
             $('<p>', {class: 'sub-wrapper'}).text(
-              chrome.i18n.getMessage('cookies')
+              chrome.i18n.getMessage(cookiedensity + 'cookies')
             )
           )
         );
