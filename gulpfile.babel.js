@@ -243,7 +243,7 @@ gulp.task('test', ['lint', 'jscs'], () => {
 
 gulp.task('build', (cb) => {
   runSequence(
-    ['html', 'images', 'extras'],
+    'test', ['html', 'images', 'extras'],
     'manifest', 'flags', 'fonts',
     'lang', 'size', cb);
 });
