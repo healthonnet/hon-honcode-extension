@@ -83,6 +83,7 @@ var honcode = {
             honcode.setPopularityBadge(data);
             honcode.setCountryBadge(data);
             honcode.setTypeBadge(data);
+            $('[data-toggle="tooltip"]').tooltip();
           });
         $('#view-certificate').append(
           $('<a>', {
