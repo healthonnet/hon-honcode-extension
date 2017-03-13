@@ -1,6 +1,6 @@
 'use strict';
-var FEWCOOKIES = 20;
-var MORECOOKIES = 50;
+var FEWCOOKIES = 15;
+var MORECOOKIES = 30;
 var honcode = {
   setCookiesBadge: function(domain,callback) {
     chrome.cookies.getAll(
