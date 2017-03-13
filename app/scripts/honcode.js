@@ -2,9 +2,10 @@
 var FEWCOOKIES = 15;
 var MORECOOKIES = 30;
 var honcode = {
-  setCookiesBadge: function(domain,callback) {
+
+  setCookiesBadge: function(url) {
     chrome.cookies.getAll(
-      {url: domain},
+      {domain: this.getDomainFromUrl(url)},
       function(cookies) {
         var cookiedensity = '';
         if (cookies.length === 0) {
@@ -35,6 +36,7 @@ var honcode = {
       }
     );
   },
+
   getDomainFromUrl: function(link) {
     var domain = tldjs.getDomain(link);
     var subdomain = tldjs.getSubdomain(link);
