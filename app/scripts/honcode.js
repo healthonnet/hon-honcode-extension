@@ -1,6 +1,42 @@
 'use strict';
-
+var FEWCOOKIES = 15;
+var MORECOOKIES = 30;
 var honcode = {
+
+  setCookiesBadge: function(url) {
+    chrome.cookies.getAll(
+      {domain: this.getDomainFromUrl(url)},
+      function(cookies) {
+        var cookiedensity = '';
+        if (cookies.length === 0) {
+          cookiedensity = 'no';
+        } else if (cookies.length > 0 && cookies.length <= FEWCOOKIES) {
+          cookiedensity = 'few';
+        } else if (cookies.length > FEWCOOKIES &&
+          cookies.length <= MORECOOKIES) {
+          cookiedensity = 'more';
+        } else if (cookies.length > MORECOOKIES) {
+          cookiedensity = 'max';
+        }
+        $('#cookie-badge').append(
+          $('<div>', {class: 'v-wrapper'}).append(
+            $('<img>', {
+              src: '/images/badge_cook_' + cookiedensity + '.jpg',
+              alt: chrome.i18n.getMessage(cookiedensity + 'cookies'),
+              'data-toggle': 'tooltip',
+              'data-placement': 'bottom',
+              title: cookies.length + ' ' + chrome.i18n.getMessage('cookies'),
+            })
+          ).append(
+            $('<p>', {class: 'sub-wrapper'}).text(
+              chrome.i18n.getMessage(cookiedensity + 'cookies')
+            )
+          )
+        );
+      }
+    );
+  },
+
   getDomainFromUrl: function(link) {
     var domain = tldjs.getDomain(link);
     var subdomain = tldjs.getSubdomain(link);
@@ -61,6 +97,7 @@ var honcode = {
         $('#certification').addClass('certification-grey');
         $('#certification-header').text(chrome.i18n.getMessage('uncertified'));
       }
+      $('[data-toggle="tooltip"]').tooltip();
     });
   },
 
