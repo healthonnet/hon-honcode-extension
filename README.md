@@ -43,6 +43,7 @@ Features
 
  * Easily identify HONcode certified websites while browsing
  * Easily identify HONcode certified websites in the search results of major search engines (Google, Bing and Yahoo)
+ * Easily identify the number of cookies used by the current website's domain.
  * Search only among sites that are HONcode certified, so that you know the results lead to sites that are trustworthy.
 
 Contributing to HONcode Toolbar
@@ -63,6 +64,7 @@ Contributors
 ------------
 
 * Aude CABRERA
+* Bruno LAURENT
 * Marko MACKIC
 
 License
