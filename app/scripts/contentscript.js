@@ -103,7 +103,7 @@ var updateLinks = function() {
   }
   // Match MedlinePlus
   else if (!isFirefox && window.location.host.indexOf('medlineplus') > -1) {
-    hrefSelector = '.reveal';
+    hrefSelector = '.bulletlist a';
     honLogoSize = 'wide';
   }
 

@@ -68,7 +68,7 @@ casper.test.begin(medlinePage, 0, function suite(test) {
 
   casper.start('https://medlineplus.gov/triglycerides.html',
     function() {
-    this.waitForSelector('a.reveal');
+    this.waitForSelector('.bulletlist a');
   });
   casper.run(function() {
     test.done();
