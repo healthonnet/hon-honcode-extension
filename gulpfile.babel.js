@@ -84,15 +84,12 @@ gulp.task('styles', () => {
 });
 
 gulp.task('html', ['styles'], () => {
-  const assets = $.useref.assets({searchPath: ['.tmp', 'app', '.']});
 
   return gulp.src('app/*.html')
-    .pipe(assets)
     .pipe($.sourcemaps.init())
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.minifyCss({compatibility: '*'})))
     .pipe($.sourcemaps.write())
-    .pipe(assets.restore())
     .pipe($.useref())
     .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
     .pipe(gulp.dest(dest));
@@ -125,7 +122,9 @@ gulp.task('locales', () => {
 
 var alterJson = lazypipe()
   .pipe($.replace, /("\w\w"):("[^"]*")/g, '$1: { "message": $2 }')
-  .pipe($.mergeJson, 'messages.json');
+  .pipe($.mergeJson, {
+    fileName: 'messages.json',
+  });
 
 gulp.task('lang-de', () => {
   return gulp.src([
