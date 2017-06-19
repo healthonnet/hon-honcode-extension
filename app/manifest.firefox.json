@@ -42,7 +42,8 @@
     "activeTab",
     "<all_urls>",
     "storage",
-    "webRequest"
+    "webRequest",
+    "cookies"
   ],
 
   "content_scripts": [
