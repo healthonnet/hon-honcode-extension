@@ -1,6 +1,7 @@
 {
   "name": "hon-honcode-extension",
   "private": true,
+  "version": "3.0.0",
   "engines": {
     "node": ">=0.8.0",
     "npm": ">=1.4.4"

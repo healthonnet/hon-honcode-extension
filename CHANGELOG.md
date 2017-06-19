@@ -1,6 +1,13 @@
 HONcode Toolbar Changelog
 =========================
 
+### v3.0.0 / 2017-06-19
+ - feat: add Cookies informations (thanks to @GeRoHi)
+ - fix: tooltip display
+ - fix: medline css selector
+ - chore: clean tests
+ - chore: update dependencies
+
 ### v2.2.0 / 2017-02-28
  - feat: rewrite DOM trees creation (avoid invoking the DOM parser)
  - feat: add donate link in footer
