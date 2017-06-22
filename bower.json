@@ -3,10 +3,10 @@
   "private": true,
   "version": "2.2.0",
   "dependencies": {
-    "jquery": "^2.2.0",
+    "jquery": "^3.2.1",
     "bootstrap": "^3.3.7",
     "moment": "^2.17.1",
-    "flag-css": "^0.0.7",
+    "flag-css": "^0.0.9",
     "font-awesome": "^4.7.0",
     "country-code": "umpirsky/country-list#2.0.2"
   },
