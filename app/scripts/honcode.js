@@ -1,6 +1,6 @@
 'use strict';
-var FEWCOOKIES = 15;
-var MORECOOKIES = 30;
+var FEWCOOKIES = 10;
+var MORECOOKIES = 20;
 var honcode = {
 
   setCookiesBadge: function(url) {
@@ -10,12 +10,12 @@ var honcode = {
         var cookiedensity = '';
         if (cookies.length === 0) {
           cookiedensity = 'no';
-        } else if (cookies.length > 0 && cookies.length <= FEWCOOKIES) {
+        } else if (cookies.length > 0 && cookies.length < FEWCOOKIES) {
           cookiedensity = 'few';
-        } else if (cookies.length > FEWCOOKIES &&
-          cookies.length <= MORECOOKIES) {
+        } else if (cookies.length >= FEWCOOKIES &&
+          cookies.length < MORECOOKIES) {
           cookiedensity = 'more';
-        } else if (cookies.length > MORECOOKIES) {
+        } else if (cookies.length >= MORECOOKIES) {
           cookiedensity = 'max';
         }
         $('#cookie-badge').append(
