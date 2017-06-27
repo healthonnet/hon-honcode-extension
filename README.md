@@ -26,11 +26,11 @@
 Overview
 --------
 
-The number and varied quality of health web pages can be daunting for users
-searching for health information on the Internet. But thanks to the HONcode
-toolbar, it is easy to differentiate good quality sites from those that are not.
+The sheer number of health web pages, along with the unpredictable and varied quality 
+of health web pages can be daunting for users searching for health information on the Internet. 
+But thanks to the HONcode toolbar, it is easy to differentiate good quality sites from poor quality ones.
 
-Install
+Installation
 -------
 
 It can be installed through:
@@ -41,15 +41,15 @@ It can be installed through:
 Features
 --------
 
- * Easily identify HONcode certified websites while browsing
+ * Easily identify HONcode certified websites (proven good quality) while browsing
  * Easily identify HONcode certified websites in the search results of major search engines (Google, Bing and Yahoo)
- * Easily identify the number of cookies used by the current website's domain.
+ * Easily check the number of cookies used by the current website’s domain and stored by your Web browser. 
  * Search only among sites that are HONcode certified, so that you know the results lead to sites that are trustworthy.
 
 Contributing to HONcode Toolbar
 -------------------------------
 
-Contributions are always welcome, no matter how large or small.
+Contributions are always welcome, no matter how big or small.
 
 See [Contributing](CONTRIBUTING.md).
 
