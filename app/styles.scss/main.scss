@@ -8,13 +8,13 @@
     display: inline-block !important;
   }
 }
-.tall {
+.honcode-logo-tall {
   width: 20px;
   height: 25px;
   background-image: url('#{$chromePrefix}/images/honcode/hon-logo.png');
 }
 
-.wide {
+.honcode-logo-wide {
   width: 48px;
   height: 12px;
   background-image: url('#{$chromePrefix}/images/honcode/hon-medline.png');

@@ -83,7 +83,7 @@ var updateLinks = function() {
   var links = [];
   var hrefSelector = '';
   var honCodeRequested = 0;
-  var honLogoSize = 'tall';
+  var honLogoSize = 'honcode-logo-tall';
   // Match Google
   if (window.location.host.indexOf('google') > -1) {
     hrefSelector = 'h3.r>a';
@@ -99,12 +99,12 @@ var updateLinks = function() {
   // Match Wikipedia
   else if (!isFirefox && window.location.host.indexOf('wikipedia') > -1) {
     hrefSelector = 'a.external.text';
-    honLogoSize = 'wide';
+    honLogoSize = 'honcode-logo-wide';
   }
   // Match MedlinePlus
   else if (!isFirefox && window.location.host.indexOf('medlineplus') > -1) {
     hrefSelector = '.bulletlist a';
-    honLogoSize = 'wide';
+    honLogoSize = 'honcode-logo-wide';
   }
 
   var nodeList = document.querySelectorAll(hrefSelector);
