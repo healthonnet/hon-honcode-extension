@@ -4,6 +4,9 @@
 var isFirefox = typeof InstallTrigger !== 'undefined';
 
 var requestHonCode = function(event, link) {
+  // Prevent Duckduckgo onclick redirect
+  event.stopPropagation();
+
   var domain = honcode.getDomainFromUrl(link);
   var layerId = 'layer' + event.target.id;
   var $logoId =  $(event.target);
@@ -98,6 +101,11 @@ var updateLinks = function() {
   else if (window.location.host.indexOf('bing') > -1) {
     hrefSelector = 'li.b_algo h2>a';
   }
+  // Match DuckDuckGo
+  else if (window.location.host.indexOf('duckduckgo') > -1) {
+    hrefSelector = 'h2.result__title>a.result__a';
+    timeToWait = 1000;
+  }
   // Match Wikipedia
   else if (!isFirefox && window.location.host.indexOf('wikipedia') > -1) {
     hrefSelector = 'a.external.text';
@@ -126,7 +134,8 @@ var updateLinks = function() {
         honLogo.parent().css('overflow','visible');
         honLogo.parent().css('position','relative');
         honLogo.prepend(honCodeLogo);
-        honcode.contentHONcodeStatus(honLogo.children('.certificateLink'), link);
+        honcode.contentHONcodeStatus(
+          honLogo.children('.certificateLink'), link);
 
         // Add onClick listener
         $('#' + logoId).one('click', function(e) {
