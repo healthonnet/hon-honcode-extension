@@ -42,7 +42,7 @@ Features
 --------
 
  * Easily identify HONcode certified websites (proven good quality) while browsing
- * Easily identify HONcode certified websites in the search results of major search engines (Google, Bing and Yahoo)
+ * Easily identify HONcode certified websites in the search results of major search engines (Google, Bing, Duckduckgo and Yahoo)
  * Easily verify the number of cookies used by the current website domain stored by your Web browser. 
  * Search only among sites that are HONcode certified, so that you know the results lead to sites that are trustworthy.
 
