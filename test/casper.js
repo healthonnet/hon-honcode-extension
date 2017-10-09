@@ -51,6 +51,18 @@ casper.test.begin(bingSearch, 0, function suite(test) {
   });
 });
 
+// Duckduckgo
+casper.test.begin(bingSearch, 0, function suite(test) {
+
+  casper.start('https://duckduckgo.com/?q=vidal&t=h_&ia=web', function() {
+    this.waitForSelector('h2.result__title>a.result__a');
+  });
+
+  casper.run(function() {
+    test.done();
+  });
+});
+
 // Wikipedia
 casper.test.begin(wikiPage, 0, function suite(test) {
 
