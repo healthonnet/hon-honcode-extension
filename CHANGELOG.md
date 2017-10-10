@@ -1,6 +1,10 @@
 HONcode Toolbar Changelog
 =========================
 
+### v3.1.0 / 2017-10-10
+ - feat: add duckduckgo support
+ - fix: fix yahoo support
+
 ### v3.0.0 / 2017-06-19
  - feat: add Cookies informations (thanks to @GeRoHi)
  - fix: tooltip display
