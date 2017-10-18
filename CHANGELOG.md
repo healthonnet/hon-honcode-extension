@@ -3,6 +3,7 @@ HONcode Toolbar Changelog
 
 ### v3.1.1 / 2017-10-18
  - chore: update search engine links
+ - chore: ignore duckduckgo ads
 
 ### v3.1.0 / 2017-10-10
  - feat: add duckduckgo support
