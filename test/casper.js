@@ -5,6 +5,7 @@ var duckduckgoSearch = 'Verify selectors in Duckduckgo search results';
 var wikiPage         = 'Verify selectors in Wikipedia pages';
 var medlinePage      = 'Verify selectors in MedlinePlus pages';
 
+casper.userAgent('Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36');
 
 // Google
 casper.test.begin(googleSearch, 1, function suite(test) {
