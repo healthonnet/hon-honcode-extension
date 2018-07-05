@@ -237,7 +237,10 @@ gulp.task('package', ['build'], () => {
 
 gulp.task('test', ['lint', 'jscs'], () => {
   gulp.src('test/casper.js')
-    .pipe(casperJs({command: 'test --web-security=no'}));
+    .pipe(casperJs({
+      binPath: './node_modules/casperjs/bin/casperjs',
+      command: 'test --web-security=no'
+    }));
 });
 
 gulp.task('build', (cb) => {
