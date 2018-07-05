@@ -29,6 +29,9 @@ casper.test.begin(googleSearch, 1, function suite(test) {
 casper.test.begin(yahooSearch, 0, function suite(test) {
 
   casper.start('https://fr.search.yahoo.com/search?p=vidal', function() {
+    if (this.exists('input.btn.btn-primary.agree')) {
+      this.click('input.btn.btn-primary.agree');
+    }
     this.waitForSelector('h3.title a');
   });
 
