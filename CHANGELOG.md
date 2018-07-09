@@ -1,6 +1,11 @@
 HONcode Toolbar Changelog
 =========================
 
+### v3.1.2 / 2018-07-09
+ - fix: unit test for yahoo
+ - chore: use local capser for unit testing
+ - chore: update copyright
+ 
 ### v3.1.1 / 2017-10-18
  - chore: update search engine links
  - chore: ignore duckduckgo ads
