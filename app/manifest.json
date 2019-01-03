@@ -31,8 +31,7 @@
       "48": "images/icon-invalid-48.png",
       "128": "images/icon-invalid-128.png"
     },
-    "default_title": "HonCode",
-    "default_popup": "popup.html"
+    "default_title": "HonCode"
   },
   "omnibox": {
     "keyword": "hon"
