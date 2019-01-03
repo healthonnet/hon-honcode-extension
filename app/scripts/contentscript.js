@@ -90,16 +90,16 @@ var updateLinks = function() {
   var honLogoSize = 'honcode-logo-tall';
   // Match Google
   if (window.location.host.indexOf('google') > -1) {
-    hrefSelector = 'h3.r>a';
+    hrefSelector = '.r>a';
   }
   // Match Yahoo
   else if (window.location.host.indexOf('yahoo') > -1) {
-    hrefSelector = '#web div.compTitle h3.title>a';
+    hrefSelector = 'h3.title>a';
     timeToWait = 1000;
   }
   // Match Bing
   else if (window.location.host.indexOf('bing') > -1) {
-    hrefSelector = 'li.b_algo h2>a';
+    hrefSelector = '.b_algo h2>a';
   }
   // Match DuckDuckGo
   else if (window.location.host.indexOf('duckduckgo') > -1) {

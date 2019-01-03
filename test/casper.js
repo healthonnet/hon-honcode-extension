@@ -12,7 +12,7 @@ casper.userAgent('Mozilla/5.0 (Windows NT 6.1) ' +
 casper.test.begin(googleSearch, 1, function suite(test) {
 
   casper.start('http://www.google.fr/search?q=vidal', function() {
-    this.waitForSelector('h3.r a');
+    this.waitForSelector('.r a');
   });
 
   // We need at least one real test.
@@ -29,8 +29,8 @@ casper.test.begin(googleSearch, 1, function suite(test) {
 casper.test.begin(yahooSearch, 0, function suite(test) {
 
   casper.start('https://fr.search.yahoo.com/search?p=vidal', function() {
-    if (this.exists('input.btn.btn-primary.agree')) {
-      this.click('input.btn.btn-primary.agree');
+    if (this.exists('button.btn.primary')) {
+      this.click('button.btn.primary');
     }
     this.waitForSelector('h3.title a');
   });
