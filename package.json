@@ -1,14 +1,18 @@
 {
   "name": "hon-honcode-extension",
   "private": true,
-  "version": "3.1.2",
+  "version": "3.1.3a",
   "engines": {
     "node": ">=0.8.0",
     "npm": ">=1.4.4"
   },
   "scripts": {
     "test": "gulp test",
+    "preinstall": "npx npm-force-resolutions",
     "postinstall": "node node_modules/bower/bin/bower install"
+  },
+  "resolutions": {
+    "graceful-fs": "4.2.3"
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -53,5 +57,7 @@
     "wiredep": "^4.0.0",
     "yargs": "^8.0.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  }
 }
