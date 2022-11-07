@@ -22,7 +22,7 @@
     "bower": "^1.7.9",
     "casperjs": "^1.1.0-beta5",
     "del": "^3.0.0",
-    "gulp": "^3.9.0",
+    "gulp": "^4.0.2",
     "gulp-cache": "^0.4.5",
     "gulp-casperjs": "0.0.6",
     "gulp-chrome-manifest": "0.0.13",
